@@ -1,0 +1,1653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-618.6665</X>
+      <Y>324.189484</Y>
+      <Z>82.26136</Z>
+    </Position>
+    <Heading>169.771988</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-447.6172</X>
+      <Y>289.085022</Y>
+      <Z>83.23076</Z>
+    </Position>
+    <Heading>355.868164</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-280.897034</X>
+      <Y>303.703857</Y>
+      <Z>90.71836</Z>
+    </Position>
+    <Heading>317.141</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-245.088684</X>
+      <Y>299.750061</Y>
+      <Z>92.04797</Z>
+    </Position>
+    <Heading>17.977438</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-162.477585</X>
+      <Y>207.897339</Y>
+      <Z>90.25187</Z>
+    </Position>
+    <Heading>156.82431</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-80.5505</X>
+      <Y>214.808853</Y>
+      <Z>96.55894</Z>
+    </Position>
+    <Heading>118.843437</Heading>
+    <Area>WVINE</Area>
+    <Street>North Archer Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-33.94616</X>
+      <Y>219.585266</Y>
+      <Z>106.55336</Z>
+    </Position>
+    <Heading>198.955154</Heading>
+    <Area>WVINE</Area>
+    <Street>Eclipse Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>55.9132957</X>
+      <Y>193.36998</Y>
+      <Z>105.4136</Z>
+    </Position>
+    <Heading>125.25248</Heading>
+    <Area>DTVINE</Area>
+    <Street>Vinewood Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>98.99968</X>
+      <Y>162.380432</Y>
+      <Z>104.604767</Z>
+    </Position>
+    <Heading>178.362579</Heading>
+    <Area>DTVINE</Area>
+    <Street>Vinewood Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>205.1106</X>
+      <Y>98.3344</Y>
+      <Z>93.7189255</Z>
+    </Position>
+    <Heading>143.378845</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>221.58342</X>
+      <Y>80.22051</Y>
+      <Z>87.92424</Z>
+    </Position>
+    <Heading>26.7710266</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>215.4558</X>
+      <Y>63.50184</Y>
+      <Z>87.92414</Z>
+    </Position>
+    <Heading>98.0899658</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>281.8427</X>
+      <Y>31.59483</Y>
+      <Z>88.47425</Z>
+    </Position>
+    <Heading>153.070984</Heading>
+    <Area>DTVINE</Area>
+    <Street>Power St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>270.5316</X>
+      <Y>31.9480419</Y>
+      <Z>84.0927353</Z>
+    </Position>
+    <Heading>178.037</Heading>
+    <Area>DTVINE</Area>
+    <Street>Power St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>246.11441</X>
+      <Y>17.8694916</Y>
+      <Z>84.11235</Z>
+    </Position>
+    <Heading>79.42693</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>225.5493</X>
+      <Y>-9.273884</Y>
+      <Z>73.79389</Z>
+    </Position>
+    <Heading>344.815948</Heading>
+    <Area>DTVINE</Area>
+    <Street>Spanish Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>321.199036</X>
+      <Y>98.71619</Y>
+      <Z>99.77778</Z>
+    </Position>
+    <Heading>236.240784</Heading>
+    <Area>DTVINE</Area>
+    <Street>Power St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>401.926666</X>
+      <Y>66.29299</Y>
+      <Z>97.97788</Z>
+    </Position>
+    <Heading>242.748322</Heading>
+    <Area>DTVINE</Area>
+    <Street>Vinewood Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>428.403473</X>
+      <Y>68.48149</Y>
+      <Z>99.504776</Z>
+    </Position>
+    <Heading>68.5583954</Heading>
+    <Area>DTVINE</Area>
+    <Street>Vinewood Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>491.7092</X>
+      <Y>-78.29624</Y>
+      <Z>77.6872253</Z>
+    </Position>
+    <Heading>65.23454</Heading>
+    <Area>HAWICK</Area>
+    <Street>Elgin Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>601.5534</X>
+      <Y>142.1489</Y>
+      <Z>98.0414658</Z>
+    </Position>
+    <Heading>114.890923</Heading>
+    <Area>DTVINE</Area>
+    <Street>Meteor St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>345.41272</X>
+      <Y>356.952942</Y>
+      <Z>105.293907</Z>
+    </Position>
+    <Heading>281.0882</Heading>
+    <Area>DTVINE</Area>
+    <Street>Power St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>302.8762</X>
+      <Y>258.570618</Y>
+      <Z>105.4414</Z>
+    </Position>
+    <Heading>1.64232588</Heading>
+    <Area>DTVINE</Area>
+    <Street>Clinton Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>206.540558</X>
+      <Y>287.324646</Y>
+      <Z>105.571243</Z>
+    </Position>
+    <Heading>341.503052</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>188.595108</X>
+      <Y>308.983551</Y>
+      <Z>105.390015</Z>
+    </Position>
+    <Heading>183.57634</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>210.896133</X>
+      <Y>337.612518</Y>
+      <Z>105.49649</Z>
+    </Position>
+    <Heading>49.4250031</Heading>
+    <Area>DTVINE</Area>
+    <Street>Clinton Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>249.166214</X>
+      <Y>376.220642</Y>
+      <Z>105.625435</Z>
+    </Position>
+    <Heading>11.9615555</Heading>
+    <Area>DTVINE</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-275.3894</X>
+      <Y>197.1843</Y>
+      <Z>85.62496</Z>
+    </Position>
+    <Heading>255.0568</Heading>
+    <Area>WVINE</Area>
+    <Street>San Vitus Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-398.213745</X>
+      <Y>164.897888</Y>
+      <Z>65.52506</Z>
+    </Position>
+    <Heading>177.1084</Heading>
+    <Area>WVINE</Area>
+    <Street>Spanish Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-421.507874</X>
+      <Y>149.3995</Y>
+      <Z>65.05724</Z>
+    </Position>
+    <Heading>171.213181</Heading>
+    <Area>WVINE</Area>
+    <Street>Spanish Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-683.9502</X>
+      <Y>-170.880325</Y>
+      <Z>37.8213158</Z>
+    </Position>
+    <Heading>276.650848</Heading>
+    <Area>ROCKF</Area>
+    <Street>Portola Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-731.0673</X>
+      <Y>-428.873627</Y>
+      <Z>35.40702</Z>
+    </Position>
+    <Heading>1.3592788</Heading>
+    <Area>ROCKF</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-694.176636</X>
+      <Y>-762.1808</Y>
+      <Z>33.6844749</Z>
+    </Position>
+    <Heading>56.473877</Heading>
+    <Area>KOREAT</Area>
+    <Street>Ginger St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-696.0222</X>
+      <Y>-731.5725</Y>
+      <Z>29.3592587</Z>
+    </Position>
+    <Heading>177.772659</Heading>
+    <Area>KOREAT</Area>
+    <Street>Ginger St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-540.4432</X>
+      <Y>-887.147461</Y>
+      <Z>25.1705875</Z>
+    </Position>
+    <Heading>155.053329</Heading>
+    <Area>KOREAT</Area>
+    <Street>Calais Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-580.8494</X>
+      <Y>-1011.96594</Y>
+      <Z>22.3242435</Z>
+    </Position>
+    <Heading>304.4549</Heading>
+    <Area>KOREAT</Area>
+    <Street>Calais Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-543.683</X>
+      <Y>-1232.26758</Y>
+      <Z>18.45169</Z>
+    </Position>
+    <Heading>83.97333</Heading>
+    <Area>KOREAT</Area>
+    <Street>Calais Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-314.956451</X>
+      <Y>-1365.08032</Y>
+      <Z>31.295723</Z>
+    </Position>
+    <Heading>87.76506</Heading>
+    <Area>STRAW</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-328.9661</X>
+      <Y>-1334.92517</Y>
+      <Z>31.2796078</Z>
+    </Position>
+    <Heading>219.05867</Heading>
+    <Area>STRAW</Area>
+    <Street>La Puerta Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-230.105255</X>
+      <Y>-1285.06458</Y>
+      <Z>31.2959824</Z>
+    </Position>
+    <Heading>255.093262</Heading>
+    <Area>STRAW</Area>
+    <Street>Olympic Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-203.4104</X>
+      <Y>-1253.35693</Y>
+      <Z>31.299366</Z>
+    </Position>
+    <Heading>346.891449</Heading>
+    <Area>STRAW</Area>
+    <Street>Olympic Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-156.174423</X>
+      <Y>-1307.80688</Y>
+      <Z>31.275032</Z>
+    </Position>
+    <Heading>47.0736656</Heading>
+    <Area>STRAW</Area>
+    <Street>Power St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-77.36856</X>
+      <Y>-1391.33313</Y>
+      <Z>29.3207722</Z>
+    </Position>
+    <Heading>178.726608</Heading>
+    <Area>STRAW</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-76.61358</X>
+      <Y>-1411.88464</Y>
+      <Z>29.3207722</Z>
+    </Position>
+    <Heading>71.85813</Heading>
+    <Area>STRAW</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-38.1589127</X>
+      <Y>-1443.70557</Y>
+      <Z>31.4935112</Z>
+    </Position>
+    <Heading>174.944382</Heading>
+    <Area>STRAW</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-107.0005</X>
+      <Y>-1460.21387</Y>
+      <Z>33.43708</Z>
+    </Position>
+    <Heading>315.981171</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-144.465286</X>
+      <Y>-1465.8302</Y>
+      <Z>33.46758</Z>
+    </Position>
+    <Heading>41.17003</Heading>
+    <Area>CHAMH</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-247.0264</X>
+      <Y>-1533.93494</Y>
+      <Z>31.5828819</Z>
+    </Position>
+    <Heading>310.1428</Heading>
+    <Area>CHAMH</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-234.352249</X>
+      <Y>-1602.66187</Y>
+      <Z>34.29927</Z>
+    </Position>
+    <Heading>87.35225</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-217.011246</X>
+      <Y>-1616.59106</Y>
+      <Z>34.8692856</Z>
+    </Position>
+    <Heading>346.916473</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-161.316376</X>
+      <Y>-1622.99792</Y>
+      <Z>33.65038</Z>
+    </Position>
+    <Heading>161.732712</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-210.1326</X>
+      <Y>-1706.25989</Y>
+      <Z>33.2257271</Z>
+    </Position>
+    <Heading>307.6752</Heading>
+    <Area>CHAMH</Area>
+    <Street>Davis Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-151.006882</X>
+      <Y>-1687.558</Y>
+      <Z>32.8723831</Z>
+    </Position>
+    <Heading>133.049026</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-130.015015</X>
+      <Y>-1684.82813</Y>
+      <Z>31.5181675</Z>
+    </Position>
+    <Heading>63.45871</Heading>
+    <Area>CHAMH</Area>
+    <Street>Strawberry Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-72.5962753</X>
+      <Y>-1510.51172</Y>
+      <Z>33.4361267</Z>
+    </Position>
+    <Heading>211.961716</Heading>
+    <Area>CHAMH</Area>
+    <Street>Forum Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-25.4752884</X>
+      <Y>-1493.7832</Y>
+      <Z>30.36209</Z>
+    </Position>
+    <Heading>117.193619</Heading>
+    <Area>STRAW</Area>
+    <Street>Strawberry Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>49.8918533</X>
+      <Y>-1453.30676</Y>
+      <Z>29.311491</Z>
+    </Position>
+    <Heading>34.1464</Heading>
+    <Area>STRAW</Area>
+    <Street>Strawberry Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>160.110046</X>
+      <Y>-1486.29626</Y>
+      <Z>29.1416187</Z>
+    </Position>
+    <Heading>96.00444</Heading>
+    <Area>DAVIS</Area>
+    <Street>Davis Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>171.202225</X>
+      <Y>-1535.047</Y>
+      <Z>29.14267</Z>
+    </Position>
+    <Heading>209.856476</Heading>
+    <Area>DAVIS</Area>
+    <Street>Davis Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>154.791611</X>
+      <Y>-1689.74243</Y>
+      <Z>29.449152</Z>
+    </Position>
+    <Heading>154.876144</Heading>
+    <Area>DAVIS</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>232.43335</X>
+      <Y>-1757</Y>
+      <Z>29.0085373</Z>
+    </Position>
+    <Heading>243.166046</Heading>
+    <Area>DAVIS</Area>
+    <Street>Brouge Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>182.582779</X>
+      <Y>-1837.44165</Y>
+      <Z>28.1018429</Z>
+    </Position>
+    <Heading>71.40587</Heading>
+    <Area>DAVIS</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>76.44968</X>
+      <Y>-1904.33569</Y>
+      <Z>21.6040974</Z>
+    </Position>
+    <Heading>136.8003</Heading>
+    <Area>DAVIS</Area>
+    <Street>Grove St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1.46227312</X>
+      <Y>-1828.21655</Y>
+      <Z>25.2638016</Z>
+    </Position>
+    <Heading>220.3195</Heading>
+    <Area>DAVIS</Area>
+    <Street>Grove St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-12.5541458</X>
+      <Y>-1816.16724</Y>
+      <Z>25.8436337</Z>
+    </Position>
+    <Heading>136.2446</Heading>
+    <Area>DAVIS</Area>
+    <Street>Grove St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>202.56546</X>
+      <Y>-2001.97473</Y>
+      <Z>18.861578</Z>
+    </Position>
+    <Heading>224.464371</Heading>
+    <Area>DAVIS</Area>
+    <Street>Roy Lowenstein Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>297.0873</X>
+      <Y>-2017.26147</Y>
+      <Z>19.9587116</Z>
+    </Position>
+    <Heading>69.12251</Heading>
+    <Area>RANCHO</Area>
+    <Street>Jamestown St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>378.5644</X>
+      <Y>-1984.09521</Y>
+      <Z>24.17699</Z>
+    </Position>
+    <Heading>347.723541</Heading>
+    <Area>RANCHO</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>461.152374</X>
+      <Y>-1970.46155</Y>
+      <Z>23.0300884</Z>
+    </Position>
+    <Heading>96.78343</Heading>
+    <Area>RANCHO</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>413.4335</X>
+      <Y>-1901.42065</Y>
+      <Z>25.608448</Z>
+    </Position>
+    <Heading>124.810051</Heading>
+    <Area>RANCHO</Area>
+    <Street>Jamestown St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>375.413818</X>
+      <Y>-1829.368</Y>
+      <Z>28.8100185</Z>
+    </Position>
+    <Heading>220.087921</Heading>
+    <Area>RANCHO</Area>
+    <Street>Roy Lowenstein Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>356.132935</X>
+      <Y>-1867.64722</Y>
+      <Z>26.93425</Z>
+    </Position>
+    <Heading>31.1008511</Heading>
+    <Area>RANCHO</Area>
+    <Street>Carson Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>466.038971</X>
+      <Y>-1721.67029</Y>
+      <Z>29.2817936</Z>
+    </Position>
+    <Heading>56.53019</Heading>
+    <Area>RANCHO</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>524.6116</X>
+      <Y>-1652.0708</Y>
+      <Z>29.3146973</Z>
+    </Position>
+    <Heading>146.382217</Heading>
+    <Area>RANCHO</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>578.2682</X>
+      <Y>-1630.67212</Y>
+      <Z>25.98993</Z>
+    </Position>
+    <Heading>39.889492</Heading>
+    <Area>RANCHO</Area>
+    <Street>Jamestown St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>356.127075</X>
+      <Y>-1284.763</Y>
+      <Z>32.5251</Z>
+    </Position>
+    <Heading>229.960739</Heading>
+    <Area>STRAW</Area>
+    <Street>Crusade Rd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>358.207123</X>
+      <Y>-1266.52319</Y>
+      <Z>32.4437637</Z>
+    </Position>
+    <Heading>229.170288</Heading>
+    <Area>STRAW</Area>
+    <Street>Crusade Rd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>339.358734</X>
+      <Y>-1268.67346</Y>
+      <Z>32.35866</Z>
+    </Position>
+    <Heading>87.73285</Heading>
+    <Area>STRAW</Area>
+    <Street>Crusade Rd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>258.220947</X>
+      <Y>-1112.65918</Y>
+      <Z>29.4593353</Z>
+    </Position>
+    <Heading>184.773132</Heading>
+    <Area>SKID</Area>
+    <Street>Adam's Apple Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>347.552673</X>
+      <Y>-1096.773</Y>
+      <Z>29.40641</Z>
+    </Position>
+    <Heading>160.6859</Heading>
+    <Area>SKID</Area>
+    <Street>Adam's Apple Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>335.103149</X>
+      <Y>-996.449951</Y>
+      <Z>29.2329521</Z>
+    </Position>
+    <Heading>152.993271</Heading>
+    <Area>SKID</Area>
+    <Street>Atlee St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>377.6435</X>
+      <Y>-904.8839</Y>
+      <Z>29.4160042</Z>
+    </Position>
+    <Heading>264.674</Heading>
+    <Area>SKID</Area>
+    <Street>Sinner St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>449.1989</X>
+      <Y>-659.2559</Y>
+      <Z>28.4798241</Z>
+    </Position>
+    <Heading>250.482712</Heading>
+    <Area>TEXTI</Area>
+    <Street>Integrity Way</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>479.0479</X>
+      <Y>-585.0693</Y>
+      <Z>28.4996834</Z>
+    </Position>
+    <Heading>102.621811</Heading>
+    <Area>TEXTI</Area>
+    <Street>Los Santos Freeway</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>457.4225</X>
+      <Y>-548.6257</Y>
+      <Z>28.4998188</Z>
+    </Position>
+    <Heading>36.891777</Heading>
+    <Area>DOWNT</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>358.693542</X>
+      <Y>-326.6644</Y>
+      <Z>46.7050362</Z>
+    </Position>
+    <Heading>236.034454</Heading>
+    <Area>ALTA</Area>
+    <Street>Meteor St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>331.2516</X>
+      <Y>-219.29</Y>
+      <Z>54.086277</Z>
+    </Position>
+    <Heading>42.3399963</Heading>
+    <Area>ALTA</Area>
+    <Street>Meteor St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>136.9138</X>
+      <Y>-241.737579</Y>
+      <Z>51.5378456</Z>
+    </Position>
+    <Heading>196.407486</Heading>
+    <Area>ALTA</Area>
+    <Street>Hawick Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>287.535553</X>
+      <Y>-694.237854</Y>
+      <Z>29.2960339</Z>
+    </Position>
+    <Heading>256.639984</Heading>
+    <Area>TEXTI</Area>
+    <Street>Integrity Way</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>370.542542</X>
+      <Y>-813.3291</Y>
+      <Z>29.2906628</Z>
+    </Position>
+    <Heading>137.384308</Heading>
+    <Area>TEXTI</Area>
+    <Street>Sinner St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>369.876068</X>
+      <Y>-794.1401</Y>
+      <Z>29.2868881</Z>
+    </Position>
+    <Heading>76.1395</Heading>
+    <Area>TEXTI</Area>
+    <Street>Sinner St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>463.345154</X>
+      <Y>-792.8865</Y>
+      <Z>27.3577785</Z>
+    </Position>
+    <Heading>124.2715</Heading>
+    <Area>TEXTI</Area>
+    <Street>Sinners Passage</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-170.1839</X>
+      <Y>1.54198241</Y>
+      <Z>57.1463661</Z>
+    </Position>
+    <Heading>324.846924</Heading>
+    <Area>WVINE</Area>
+    <Street>San Vitus Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-19.0753956</X>
+      <Y>-217.279068</Y>
+      <Z>46.1764755</Z>
+    </Position>
+    <Heading>220.612152</Heading>
+    <Area>ALTA</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>194.17717</X>
+      <Y>-160.812408</Y>
+      <Z>56.35388</Z>
+    </Position>
+    <Heading>350.017181</Heading>
+    <Area>HAWICK</Area>
+    <Street>Alta Pl</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>71.76782</X>
+      <Y>-96.6823654</Y>
+      <Z>58.1461868</Z>
+    </Position>
+    <Heading>240.273468</Heading>
+    <Area>HAWICK</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>29.4435673</X>
+      <Y>-99.48723</Y>
+      <Z>56.0002823</Z>
+    </Position>
+    <Heading>295.769257</Heading>
+    <Area>HAWICK</Area>
+    <Street>Alta St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-17.6595135</X>
+      <Y>-81.08125</Y>
+      <Z>56.9221954</Z>
+    </Position>
+    <Heading>297.477173</Heading>
+    <Area>HAWICK</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-37.5355644</X>
+      <Y>-77.5928345</Y>
+      <Z>58.5349731</Z>
+    </Position>
+    <Heading>327.6849</Heading>
+    <Area>HAWICK</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-41.581646</X>
+      <Y>-53.73675</Y>
+      <Z>63.3848152</Z>
+    </Position>
+    <Heading>56.02445</Heading>
+    <Area>HAWICK</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-34.7502136</X>
+      <Y>-27.83284</Y>
+      <Z>68.9976044</Z>
+    </Position>
+    <Heading>47.09708</Heading>
+    <Area>HAWICK</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-96.84945</X>
+      <Y>20.4260464</Y>
+      <Z>71.42698</Z>
+    </Position>
+    <Heading>161.407562</Heading>
+    <Area>WVINE</Area>
+    <Street>Spanish Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-272.041321</X>
+      <Y>75.46076</Y>
+      <Z>66.44892</Z>
+    </Position>
+    <Heading>176.527069</Heading>
+    <Area>WVINE</Area>
+    <Street>San Vitus Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-322.9765</X>
+      <Y>105.297935</Y>
+      <Z>67.3129959</Z>
+    </Position>
+    <Heading>296.271</Heading>
+    <Area>WVINE</Area>
+    <Street>Spanish Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-449.3065</X>
+      <Y>65.2254944</Y>
+      <Z>58.30459</Z>
+    </Position>
+    <Heading>168.525986</Heading>
+    <Area>WVINE</Area>
+    <Street>Hawick Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-602.8503</X>
+      <Y>178.423019</Y>
+      <Z>65.1257553</Z>
+    </Position>
+    <Heading>124.163422</Heading>
+    <Area>WVINE</Area>
+    <Street>Strangeways Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1562.04517</X>
+      <Y>-429.487427</Y>
+      <Z>37.94972</Z>
+    </Position>
+    <Heading>53.9407539</Heading>
+    <Area>DELPE</Area>
+    <Street>Cougar Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1636.48865</X>
+      <Y>-1054.464</Y>
+      <Z>13.1521616</Z>
+    </Position>
+    <Heading>281.969421</Heading>
+    <Area>DELBE</Area>
+    <Street>Red Desert Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1466.15222</X>
+      <Y>-934.3905</Y>
+      <Z>10.2163782</Z>
+    </Position>
+    <Heading>225.478455</Heading>
+    <Area>SanAnd</Area>
+    <Street>Sandcastle Way</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1485.48328</X>
+      <Y>-910.1289</Y>
+      <Z>10.036171</Z>
+    </Position>
+    <Heading>326.8056</Heading>
+    <Area>DELBE</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1517.41479</X>
+      <Y>-888.57</Y>
+      <Z>10.1076021</Z>
+    </Position>
+    <Heading>354.101776</Heading>
+    <Area>DELBE</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1360.56921</X>
+      <Y>-930.7855</Y>
+      <Z>9.705819</Z>
+    </Position>
+    <Heading>279.1467</Heading>
+    <Area>SanAnd</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1334.59607</X>
+      <Y>-1121.22827</Y>
+      <Z>4.22805357</Z>
+    </Position>
+    <Heading>204.55127</Heading>
+    <Area>BEACH</Area>
+    <Street>Conquistador St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1318.86011</X>
+      <Y>-1241.66785</Y>
+      <Z>4.598159</Z>
+    </Position>
+    <Heading>285.09726</Heading>
+    <Area>BEACH</Area>
+    <Street>Cortes St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1305.59485</X>
+      <Y>-1316.29028</Y>
+      <Z>4.879645</Z>
+    </Position>
+    <Heading>351.182434</Heading>
+    <Area>BEACH</Area>
+    <Street>Vitus St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1230.11047</X>
+      <Y>-1406.10156</Y>
+      <Z>4.204101</Z>
+    </Position>
+    <Heading>116.550232</Heading>
+    <Area>VESP</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1186.20508</X>
+      <Y>-1391.7439</Y>
+      <Z>4.568182</Z>
+    </Position>
+    <Heading>308.545227</Heading>
+    <Area>VESP</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1219.82861</X>
+      <Y>-1343.7</Y>
+      <Z>4.20768261</Z>
+    </Position>
+    <Heading>289.877869</Heading>
+    <Area>VESP</Area>
+    <Street>Magellan Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1204.5033</X>
+      <Y>-1309.78308</Y>
+      <Z>4.86181164</Z>
+    </Position>
+    <Heading>91.8545456</Heading>
+    <Area>VESP</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1101.24719</X>
+      <Y>-1513.51257</Y>
+      <Z>4.65850925</Z>
+    </Position>
+    <Heading>45.12709</Heading>
+    <Area>DELSOL</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1065.70911</X>
+      <Y>-1673.0094</Y>
+      <Z>4.510423</Z>
+    </Position>
+    <Heading>37.7090569</Heading>
+    <Area>DELSOL</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1088.622</X>
+      <Y>-1666.15088</Y>
+      <Z>4.70496941</Z>
+    </Position>
+    <Heading>294.7012</Heading>
+    <Area>BEACH</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1106.85022</X>
+      <Y>-1246.3595</Y>
+      <Z>2.33796859</Z>
+    </Position>
+    <Heading>22.7003059</Heading>
+    <Area>VCANA</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1162.96179</X>
+      <Y>-1138.83423</Y>
+      <Z>2.75497842</Z>
+    </Position>
+    <Heading>275.488617</Heading>
+    <Area>VCANA</Area>
+    <Street>Imagination Ct</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1211.40552</X>
+      <Y>-1068.42725</Y>
+      <Z>8.352787</Z>
+    </Position>
+    <Heading>288.538177</Heading>
+    <Area>VCANA</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1257.43823</X>
+      <Y>-862.265564</Y>
+      <Z>12.3072042</Z>
+    </Position>
+    <Heading>295.32666</Heading>
+    <Area>VCANA</Area>
+    <Street>San Andreas Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1303.17151</X>
+      <Y>-801.6583</Y>
+      <Z>17.5774269</Z>
+    </Position>
+    <Heading>299.253</Heading>
+    <Area>DELPE</Area>
+    <Street>Bay City Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1315.652</X>
+      <Y>-762.6444</Y>
+      <Z>20.37739</Z>
+    </Position>
+    <Heading>134.1921</Heading>
+    <Area>DELPE</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1373.883</X>
+      <Y>-658.0261</Y>
+      <Z>28.2774525</Z>
+    </Position>
+    <Heading>301.2798</Heading>
+    <Area>DELPE</Area>
+    <Street>Red Desert Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1443.545</X>
+      <Y>-637.6117</Y>
+      <Z>29.81382</Z>
+    </Position>
+    <Heading>116.679436</Heading>
+    <Area>DELPE</Area>
+    <Street>Marathon Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1257.20691</X>
+      <Y>-666.368347</Y>
+      <Z>26.14033</Z>
+    </Position>
+    <Heading>309.5219</Heading>
+    <Area>DELPE</Area>
+    <Street>North Rockford Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1210.64832</X>
+      <Y>-721.2413</Y>
+      <Z>21.58961</Z>
+    </Position>
+    <Heading>312.618134</Heading>
+    <Area>DELPE</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1102.27368</X>
+      <Y>-567.346252</Y>
+      <Z>33.1498222</Z>
+    </Position>
+    <Heading>186.9652</Heading>
+    <Area>MOVIE</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1094.13782</X>
+      <Y>-543.277344</Y>
+      <Z>35.183857</Z>
+    </Position>
+    <Heading>296.054352</Heading>
+    <Area>MOVIE</Area>
+    <Street>Del Perro Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-706.400146</X>
+      <Y>-973.2561</Y>
+      <Z>20.3901386</Z>
+    </Position>
+    <Heading>217.167664</Heading>
+    <Area>KOREAT</Area>
+    <Street>Lindsay Circus</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-713.1489</X>
+      <Y>-1125.30469</Y>
+      <Z>10.7521544</Z>
+    </Position>
+    <Heading>302.307251</Heading>
+    <Area>KOREAT</Area>
+    <Street>South Rockford Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-680.8518</X>
+      <Y>-1173.94226</Y>
+      <Z>10.6126413</Z>
+    </Position>
+    <Heading>310.632538</Heading>
+    <Area>DELSOL</Area>
+    <Street>South Rockford Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>856.319</X>
+      <Y>-2118.7915</Y>
+      <Z>30.6623726</Z>
+    </Position>
+    <Heading>273.4704</Heading>
+    <Area>CYPRE</Area>
+    <Street>El Rancho Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>836.5664</X>
+      <Y>-2185.08521</Y>
+      <Z>30.3072224</Z>
+    </Position>
+    <Heading>252.938416</Heading>
+    <Area>CYPRE</Area>
+    <Street>Dry Dock St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>952.4127</X>
+      <Y>-2198.71</Y>
+      <Z>30.5515747</Z>
+    </Position>
+    <Heading>357.7755</Heading>
+    <Area>CYPRE</Area>
+    <Street>Orchardville Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1216.81165</X>
+      <Y>-1382.686</Y>
+      <Z>35.33306</Z>
+    </Position>
+    <Heading>228.088654</Heading>
+    <Area>MURRI</Area>
+    <Street>El Rancho Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1139.40869</X>
+      <Y>-1337.37927</Y>
+      <Z>34.6567</Z>
+    </Position>
+    <Heading>326.501953</Heading>
+    <Area>MURRI</Area>
+    <Street>Elysian Fields Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1254.99768</X>
+      <Y>-1655.80078</Y>
+      <Z>46.4462433</Z>
+    </Position>
+    <Heading>247.122131</Heading>
+    <Area>EBURO</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>989.46814</X>
+      <Y>-1809.43567</Y>
+      <Z>31.1862755</Z>
+    </Position>
+    <Heading>67.9205551</Heading>
+    <Area>SanAnd</Area>
+    <Street>Orchardville Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>963.538269</X>
+      <Y>-1529.583</Y>
+      <Z>31.03231</Z>
+    </Position>
+    <Heading>247.6767</Heading>
+    <Area>LMESA</Area>
+    <Street>Elysian Fields Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1000.54547</X>
+      <Y>-1564.96631</Y>
+      <Z>30.7548485</Z>
+    </Position>
+    <Heading>354.444122</Heading>
+    <Area>LMESA</Area>
+    <Street>Elysian Fields Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>844.02124</X>
+      <Y>-1043.9541</Y>
+      <Z>27.7638435</Z>
+    </Position>
+    <Heading>184.738953</Heading>
+    <Area>LMESA</Area>
+    <Street>Olympic Fwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>730.7119</X>
+      <Y>-736.35</Y>
+      <Z>26.2674828</Z>
+    </Position>
+    <Heading>70.93872</Heading>
+    <Area>LMESA</Area>
+    <Street>Popular St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>950.888</X>
+      <Y>-123.335594</Y>
+      <Z>74.35304</Z>
+    </Position>
+    <Heading>258.5581</Heading>
+    <Area>EAST_V</Area>
+    <Street>Mirror Park Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1062.06738</X>
+      <Y>-2410.05322</Y>
+      <Z>29.9770927</Z>
+    </Position>
+    <Heading>84.20168</Heading>
+    <Area>EBURO</Area>
+    <Street>South Shambles St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

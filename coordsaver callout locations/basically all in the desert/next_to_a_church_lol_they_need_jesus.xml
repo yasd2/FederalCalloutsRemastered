@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-319.940033</X>
+      <Y>2735.83838</Y>
+      <Z>68.4459152</Z>
+    </Position>
+    <Heading>19.4455433</Heading>
+    <Area>GREATC</Area>
+    <Street>Zancudo Grande Valley</Street>
+    <Tags>
+      <string>square</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1343.94714</X>
+      <Y>4322.15332</Y>
+      <Z>38.0613556</Z>
+    </Position>
+    <Heading>349.977081</Heading>
+    <Area>GALFISH</Area>
+    <Street>North Calafia Way</Street>
+    <Tags>
+      <string>n/s</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

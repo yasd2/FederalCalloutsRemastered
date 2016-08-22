@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>414.830139</X>
+      <Y>6481.538</Y>
+      <Z>28.8058414</Z>
+    </Position>
+    <Heading>348.325317</Heading>
+    <Area>MTCHIL</Area>
+    <Street>Great Ocean Hwy</Street>
+    <Tags>
+      <string>n/s</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

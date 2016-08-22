@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-67.75251</X>
+      <Y>1900.44226</Y>
+      <Z>196.254227</Z>
+    </Position>
+    <Heading>4.71874</Heading>
+    <Area>DESRT</Area>
+    <Street>Baytree Canyon Rd</Street>
+    <Tags>
+      <string>square</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

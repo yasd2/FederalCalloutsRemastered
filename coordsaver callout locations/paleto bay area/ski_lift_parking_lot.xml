@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-764.0894</X>
+      <Y>5538.644</Y>
+      <Z>33.4852676</Z>
+    </Position>
+    <Heading>74.3687744</Heading>
+    <Area>PALFOR</Area>
+    <Street>Procopio Promenade</Street>
+    <Tags>
+      <string>square</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

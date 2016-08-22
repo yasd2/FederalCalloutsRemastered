@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1540.97229</X>
+      <Y>-563.106934</Y>
+      <Z>33.64763</Z>
+    </Position>
+    <Heading>150.1899</Heading>
+    <Area>DELPE</Area>
+    <Street>Bay City Ave</Street>
+    <Tags>
+      <string>LOMBANK</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1396.41785</X>
+      <Y>-459.555054</Y>
+      <Z>34.4802437</Z>
+    </Position>
+    <Heading>331.587677</Heading>
+    <Area>DELPE</Area>
+    <Street>South Rockford Dr</Street>
+    <Tags>
+      <string>Maze Bank</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-815.47876</X>
+      <Y>-744.5191</Y>
+      <Z>23.59306</Z>
+    </Position>
+    <Heading>94.46919</Heading>
+    <Area>KOREAT</Area>
+    <Street>Decker St</Street>
+    <Tags>
+      <string>WIWANG</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-231.183273</X>
+      <Y>-719.748962</Y>
+      <Z>33.49669</Z>
+    </Position>
+    <Heading>339.35434</Heading>
+    <Area>PBOX</Area>
+    <Street>Peaceful St</Street>
+    <Tags>
+      <string>Schlongberg Sachs</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-170.135574</X>
+      <Y>-628.532166</Y>
+      <Z>32.4243279</Z>
+    </Position>
+    <Heading>336.942139</Heading>
+    <Area>PBOX</Area>
+    <Street>San Andreas Ave</Street>
+    <Tags>
+      <string>Arcadius Parking Garage</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-290.6982</X>
+      <Y>-415.135834</Y>
+      <Z>30.0810452</Z>
+    </Position>
+    <Heading>255.725769</Heading>
+    <Area>ROCKF</Area>
+    <Street>Dorset Dr</Street>
+    <Tags>
+      <string>Augury Insurance</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-255.566071</X>
+      <Y>-333.3363</Y>
+      <Z>29.77096</Z>
+    </Position>
+    <Heading>2.05831432</Heading>
+    <Area>ROCKF</Area>
+    <Street>San Vitus Blvd</Street>
+    <Tags>
+      <string>Rockford Plaza Metro Station</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>124.016083</X>
+      <Y>-786.1483</Y>
+      <Z>31.1850166</Z>
+    </Position>
+    <Heading>65.96131</Heading>
+    <Area>PBOX</Area>
+    <Street>San Andreas Ave</Street>
+    <Tags>
+      <string>FIB Building</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-210.1608</X>
+      <Y>-1997.69482</Y>
+      <Z>27.7446079</Z>
+    </Position>
+    <Heading>171.973984</Heading>
+    <Area>STAD</Area>
+    <Street>Autopia Pkwy</Street>
+    <Tags>
+      <string>Maze Bank Arena</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-544.9615</X>
+      <Y>-2222.88379</Y>
+      <Z>6.39402628</Z>
+    </Position>
+    <Heading>233.455</Heading>
+    <Area>AIRP</Area>
+    <Street>La Puerta Fwy</Street>
+    <Tags>
+      <string>Bridge</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1035.54041</X>
+      <Y>-2514.45825</Y>
+      <Z>13.60763</Z>
+    </Position>
+    <Heading>148.615189</Heading>
+    <Area>AIRP</Area>
+    <Street>New Empire Way</Street>
+    <Tags>
+      <string>Los Santos International Airport</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1074.52222</X>
+      <Y>-2576.64917</Y>
+      <Z>20.05632</Z>
+    </Position>
+    <Heading>152.586151</Heading>
+    <Area>AIRP</Area>
+    <Street>New Empire Way</Street>
+    <Tags>
+      <string>Los Santos International Airport</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1593.35925</X>
+      <Y>-1054.83472</Y>
+      <Z>13.0174351</Z>
+    </Position>
+    <Heading>223.260178</Heading>
+    <Area>DELBE</Area>
+    <Street>Red Desert Ave</Street>
+    <Tags>
+      <string>Pier</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-2296.13281</X>
+      <Y>376.170959</Y>
+      <Z>174.466766</Z>
+    </Position>
+    <Heading>293.980682</Heading>
+    <Area>PBLUFF</Area>
+    <Street>Kortz Dr</Street>
+    <Tags>
+      <string>Low Rotunda</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>923.159668</X>
+      <Y>45.307518</Y>
+      <Z>80.76479</Z>
+    </Position>
+    <Heading>329.068</Heading>
+    <Area>CHIL</Area>
+    <Street>Vinewood Park Dr</Street>
+    <Tags>
+      <string>Casino</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-426.559265</X>
+      <Y>1123.28271</Y>
+      <Z>325.8545</Z>
+    </Position>
+    <Heading>165.254242</Heading>
+    <Area>OBSERV</Area>
+    <Street>East Galileo Ave</Street>
+    <Tags>
+      <string>Galileo Observatory</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2721.97559</X>
+      <Y>3439.80957</Y>
+      <Z>56.0345268</Z>
+    </Position>
+    <Heading>65.28456</Heading>
+    <Area>SANCHIA</Area>
+    <Street>Senora Fwy</Street>
+    <Tags>
+      <string>YouTool</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1855.22278</X>
+      <Y>2587.46338</Y>
+      <Z>45.67205</Z>
+    </Position>
+    <Heading>180.9511</Heading>
+    <Area>JAIL</Area>
+    <Street>Route 68</Street>
+    <Tags>
+      <string>Bolingbroke Penitentiary</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1855.67078</X>
+      <Y>2705.70239</Y>
+      <Z>45.922554</Z>
+    </Position>
+    <Heading>5.0901413</Heading>
+    <Area>JAIL</Area>
+    <Street>Route 68</Street>
+    <Tags>
+      <string>Bolingbroke Penitentiary</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2520.73657</X>
+      <Y>-299.236542</Y>
+      <Z>92.99281</Z>
+    </Position>
+    <Heading>92.69562</Heading>
+    <Area>NOOSE</Area>
+    <Street>Sustancia Rd</Street>
+    <Tags>
+      <string>NOOSE HQ</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2522.579</X>
+      <Y>-310.562225</Y>
+      <Z>92.99282</Z>
+    </Position>
+    <Heading>277.494934</Heading>
+    <Area>NOOSE</Area>
+    <Street>Sustancia Rd</Street>
+    <Tags>
+      <string>NOOSE HQ</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2531.77417</X>
+      <Y>-362.650421</Y>
+      <Z>92.99282</Z>
+    </Position>
+    <Heading>133.283356</Heading>
+    <Area>NOOSE</Area>
+    <Street>Sustancia Rd</Street>
+    <Tags>
+      <string>NOOSE HQ</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2532.69946</X>
+      <Y>-406.165771</Y>
+      <Z>92.99281</Z>
+    </Position>
+    <Heading>223.612961</Heading>
+    <Area>NOOSE</Area>
+    <Street>Sustancia Rd</Street>
+    <Tags>
+      <string>NOOSE HQ</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

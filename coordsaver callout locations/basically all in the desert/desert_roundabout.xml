@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2053.325</X>
+      <Y>3395.89722</Y>
+      <Z>44.89387</Z>
+    </Position>
+    <Heading>182.956467</Heading>
+    <Area>DESRT</Area>
+    <Street>Nowhere Rd</Street>
+    <Tags>
+      <string>e/w</string>
+      <string>alley</string>
+      <string>n/s</string>
+      <string>desertroundabout</string>
+      <string>n/s</string>
+      <string>desert roundabout</string>
+      <string>square</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

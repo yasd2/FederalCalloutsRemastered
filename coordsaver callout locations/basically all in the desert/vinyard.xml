@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1774.82227</X>
+      <Y>2228.25562</Y>
+      <Z>92.94979</Z>
+    </Position>
+    <Heading>265.562775</Heading>
+    <Area>TONGVAH</Area>
+    <Street>Buen Vino Rd</Street>
+    <Tags>
+      <string>square</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

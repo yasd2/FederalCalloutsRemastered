@@ -1,0 +1,8 @@
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\obj\Debug\APIExample.csprojResolveAssemblyReference.cache
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\bin\Debug\APIExample.dll
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\bin\Debug\APIExample.pdb
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\bin\Debug\LSPD First Response.dll
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\bin\Debug\RagePluginHookSDK.dll
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\bin\Debug\RagePluginHookSDK.xml
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\obj\Debug\APIExample.dll
+C:\Users\Luke\Google Drive\C# Development\V Modding\APIExample\APIExample\APIExample\obj\Debug\APIExample.pdb

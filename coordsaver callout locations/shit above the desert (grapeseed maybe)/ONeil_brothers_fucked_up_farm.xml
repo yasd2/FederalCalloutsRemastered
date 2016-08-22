@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2461.02539</X>
+      <Y>4952.58</Y>
+      <Z>45.145504</Z>
+    </Position>
+    <Heading>10.2994089</Heading>
+    <Area>GRAPES</Area>
+    <Street>Union Rd</Street>
+    <Tags>
+      <string>e/w</string>
+    </Tags>
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>

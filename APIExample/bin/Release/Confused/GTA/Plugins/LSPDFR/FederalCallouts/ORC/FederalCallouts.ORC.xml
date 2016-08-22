@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfExtendedSpawnPoint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1193.39124</X>
+      <Y>-772.2841</Y>
+      <Z>17.3245</Z>
+    </Position>
+    <Heading>117.45417</Heading>
+    <Area>DELPE</Area>
+    <Street>North Rockford Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-827.71405</X>
+      <Y>-1076.02454</Y>
+      <Z>11.32811</Z>
+    </Position>
+    <Heading>252.848846</Heading>
+    <Area>VCANA</Area>
+    <Street>Palomino Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>75.2896347</X>
+      <Y>-1398.78137</Y>
+      <Z>29.3761463</Z>
+    </Position>
+    <Heading>271.863159</Heading>
+    <Area>STRAW</Area>
+    <Street>Innocence Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>427.411926</X>
+      <Y>-799.73175</Y>
+      <Z>29.4911385</Z>
+    </Position>
+    <Heading>95.97743</Heading>
+    <Area>TEXTI</Area>
+    <Street>Sinner St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>121.835495</X>
+      <Y>-224.821426</Y>
+      <Z>54.55783</Z>
+    </Position>
+    <Heading>333.1563</Heading>
+    <Area>ALTA</Area>
+    <Street>Hawick Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-161.923813</X>
+      <Y>-302.254669</Y>
+      <Z>39.7333221</Z>
+    </Position>
+    <Heading>255.61792</Heading>
+    <Area>BURTON</Area>
+    <Street>Las Lagunas Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-711.2454</X>
+      <Y>-154.946991</Y>
+      <Z>37.4151344</Z>
+    </Position>
+    <Heading>105.54026</Heading>
+    <Area>ROCKF</Area>
+    <Street>Portola Dr</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1452.76025</X>
+      <Y>-237.424</Y>
+      <Z>49.8070259</Z>
+    </Position>
+    <Heading>45.1884575</Heading>
+    <Area>MORN</Area>
+    <Street>Cougar Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>617.37854</X>
+      <Y>2765.78076</Y>
+      <Z>42.08814</Z>
+    </Position>
+    <Heading>191.665863</Heading>
+    <Area>HARMO</Area>
+    <Street>Route 68</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1190.55017</X>
+      <Y>2709.7085</Y>
+      <Z>38.22473</Z>
+    </Position>
+    <Heading>162.210373</Heading>
+    <Area>DESRT</Area>
+    <Street>Route 68</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-1106.32312</X>
+      <Y>2706.86353</Y>
+      <Z>19.1078663</Z>
+    </Position>
+    <Heading>234.220062</Heading>
+    <Area>ZANCUDO</Area>
+    <Street>Route 68</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-3172.635</X>
+      <Y>1047.499</Y>
+      <Z>20.8632145</Z>
+    </Position>
+    <Heading>334.971954</Heading>
+    <Area>CHU</Area>
+    <Street>Great Ocean Hwy</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>2.22072434</X>
+      <Y>6511.77246</Y>
+      <Z>31.87783</Z>
+    </Position>
+    <Heading>40.1544151</Heading>
+    <Area>PALETO</Area>
+    <Street>Paleto Blvd</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1692.676</X>
+      <Y>4820.47559</Y>
+      <Z>42.06313</Z>
+    </Position>
+    <Heading>93.3868256</Heading>
+    <Area>GRAPES</Area>
+    <Street>Grapeseed Main St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>1707.39514</X>
+      <Y>4929.58</Y>
+      <Z>42.0636749</Z>
+    </Position>
+    <Heading>87.89049</Heading>
+    <Area>GRAPES</Area>
+    <Street>Grapeseed Main St</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+  <ExtendedSpawnPoint>
+    <Position>
+      <X>-50.48305</X>
+      <Y>-1750.14258</Y>
+      <Z>29.4210072</Z>
+    </Position>
+    <Heading>154.711624</Heading>
+    <Area>DAVIS</Area>
+    <Street>Davis Ave</Street>
+    <Tags />
+  </ExtendedSpawnPoint>
+</ArrayOfExtendedSpawnPoint>
