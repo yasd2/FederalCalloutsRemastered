@@ -15,7 +15,7 @@ using FederalCallouts.UI;
  * Make the yellow warning blip show at beginning of callout
  * 
  */
-//Our namespace (aka folder) where we keep our callout classes.
+//Our namespace (aka folder) where we keep our callout classes. 
 namespace FederalCallouts.Callouts
 {
     //Give your callout a string name and a probability of spawning. We also inherit from the Callout class, as this is a callout

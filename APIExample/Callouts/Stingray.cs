@@ -58,7 +58,7 @@ namespace FederalCallouts.Callouts
             {
                 Vector3 spawn = new Vector3(SpawnPoint.X, SpawnPoint.Y, SpawnPoint.Z + 600);
                 
-                Ped pilot = new Ped(new Model("S_M_M_PILOT_02"), spawn, 0);
+                Ped pilot = new Ped(new Model("S_M_M_PILOT_02"), new Vector3(spawn.X + 10,spawn.Y + 10,spawn.Z), 0);
                 helo = new Vehicle("maverick", spawn);
                 helo.IsEngineOn = true;
                 helo.IsEngineStarting = true;
@@ -125,7 +125,16 @@ namespace FederalCallouts.Callouts
                 suspectBlip.Scale = 0.75f;
                 Dispatch.Notify("~g~Ground teams~w~: You have a green light to move in.");
                 if (switchedCharacter)
+                {
                     charManager.SwitchToBackup();
+                    GameFiber.StartNew((() =>
+                    {
+                        GameFiber.Sleep(2100);
+                        Ped flyAway = new Ped(SpawnPoint);
+                        flyAway.WarpIntoVehicle(helo, helo.GetFreeSeatIndex() ?? -1);
+                        flyAway.Tasks.DriveToPosition(flyAway.Position.Around(1000), 200, VehicleDrivingFlags.Normal);
+                    }));
+                }
                 else
                 {
                     throw new System.Exception("Not implemented!");

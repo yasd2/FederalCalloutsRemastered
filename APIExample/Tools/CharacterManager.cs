@@ -15,6 +15,7 @@ namespace FederalCallouts.Tools
         private Vehicle playerVehicle;
         private bool savedVehicle = false;
         private bool switchedToBackup = false;
+        PedInventory savedInventory;
         /// <summary>
         /// Switches the player character to another ped. This method will take 6 seconds to complete but is asynchronous.
         /// </summary>
@@ -36,6 +37,7 @@ namespace FederalCallouts.Tools
                 savedPosition = p.Position;
                 savedHeading = p.Heading;
                 savedModel = p.Model;
+                savedInventory = p.Inventory;
                 //playerCharacter.MakePersistent();
             }
             GameFiber.StartNew((() =>
@@ -44,6 +46,7 @@ namespace FederalCallouts.Tools
                 //Game.LocalPlayer.Character.Model = ped.Model;
                 Game.LocalPlayer.Model = ped.Model;
                 //TODO: variation copying
+                //TODO: backup weapons
                 if (ped.CurrentVehicle.Exists() || (savedVehicle & playerVehicle.Exists()))
                 {
                     Vehicle v;
@@ -56,12 +59,14 @@ namespace FederalCallouts.Tools
                 }
                 else
                 {
+                    Game.LocalPlayer.Character.Position = ped.Position;
+                    Game.LocalPlayer.Character.Heading = ped.Heading;
                     ped.Delete();
                 }
 
                 GameFiber.Sleep(2 * 1000);
                 Game.FadeScreenIn(1000, true);
-            }),"Character Manager Switch");
+            }), "Character Manager Switch");
 
         }
         /// <summary>
@@ -72,7 +77,9 @@ namespace FederalCallouts.Tools
             if (switchedToBackup)
                 return;
             switchedToBackup = true;
-            SwitchToPed(new Ped(savedModel, savedPosition, savedHeading), false);
+             
+            Ped backup = new Ped(savedModel, savedPosition, savedHeading);
+            SwitchToPed(backup, false);
         }
     }
 }
