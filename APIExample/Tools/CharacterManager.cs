@@ -15,6 +15,7 @@ namespace FederalCallouts.Tools
         private Vehicle playerVehicle;
         private bool savedVehicle = false;
         private bool switchedToBackup = false;
+        private Dictionary<int, Vector2> savedVariation;
         PedInventory savedInventory;
         /// <summary>
         /// Switches the player character to another ped. This method will take 6 seconds to complete but is asynchronous.
@@ -38,15 +39,28 @@ namespace FederalCallouts.Tools
                 savedHeading = p.Heading;
                 savedModel = p.Model;
                 savedInventory = p.Inventory;
-                //playerCharacter.MakePersistent();
+                savedVariation = new Dictionary<int, Vector2>();
+                int currDraw;
+                int currDrawTex;
+                for (int i = 0; i < 11; i++)
+                {
+                    p.GetVariation(i, out currDraw, out currDrawTex);
+                    savedVariation.Add(i, new Vector2(currDraw, currDrawTex));
+                }
+                
             }
             GameFiber.StartNew((() =>
             {
                 Game.FadeScreenOut(1000, true);
-                //Game.LocalPlayer.Character.Model = ped.Model;
+                foreach (WeaponDescriptor w in Game.LocalPlayer.Character.Inventory.Weapons)
+                    ped.Inventory.GiveNewWeapon(w, w.Ammo, false);
                 Game.LocalPlayer.Model = ped.Model;
-                //TODO: variation copying
+                foreach (WeaponDescriptor w in ped.Inventory.Weapons)
+                    Game.LocalPlayer.Character.Inventory.GiveNewWeapon(w, w.Ammo, false);
                 //TODO: backup weapons
+                CopyVariationToPed(ped, Game.LocalPlayer.Character);
+                
+                
                 if (ped.CurrentVehicle.Exists() || (savedVehicle & playerVehicle.Exists()))
                 {
                     Vehicle v;
@@ -77,9 +91,30 @@ namespace FederalCallouts.Tools
             if (switchedToBackup)
                 return;
             switchedToBackup = true;
-             
+
             Ped backup = new Ped(savedModel, savedPosition, savedHeading);
+            LoadVariationToPed(backup);
             SwitchToPed(backup, false);
+        }
+
+        public void LoadVariationToPed(Ped p)
+        {
+            for (int i = 0; i < 11; i++)
+                p.SetVariation(i, (int)savedVariation[i].X, (int)savedVariation[i].Y);
+        }
+
+        public void CopyVariationToPed(Ped from, Ped to)
+        {
+            Dictionary<int, Vector2> copiedVariation = new Dictionary<int, Vector2>();
+            int currDraw;
+            int currDrawTex;
+            for (int i = 0; i < 11; i++)
+            {
+                from.GetVariation(i, out currDraw, out currDrawTex);
+                copiedVariation.Add(i, new Vector2(currDraw, currDrawTex));
+            }
+            for (int i = 0; i < 11; i++)
+                to.SetVariation(i, (int)copiedVariation[i].X, (int)copiedVariation[i].Y);
         }
     }
 }
