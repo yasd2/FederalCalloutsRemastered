@@ -130,9 +130,9 @@ namespace FederalCallouts.Callouts
                 {
                     GameFiber.StartNew((() =>
                     {
-                        Game.DisplayNotification("~b~" + Settings.PlayerName + "~w~: Dispatch, I'm on scene and moving in to make the arrest.");
+                        Dispatch.PlayerSay("Dispatch, I'm on scene and moving in to make the arrest");
                         GameFiber.Wait(2000);
-                        Game.DisplayNotification("~b~Dispatch~w~: Copy.");
+                        Dispatch.Copy();
                     }));
                     state = StreetArrestState.OnScene;
                     suspectBlip.DisableRoute();
@@ -151,18 +151,18 @@ namespace FederalCallouts.Callouts
                     GameFiber.StartNew((() =>
                     {
                         GameFiber.Wait(1000);
-                        Game.DisplayNotification("~b~" + Settings.PlayerName + "~w~: Dispatch, suspect is dead.");
+                        Dispatch.PlayerSay("suspect is dead");
                         GameFiber.Wait(2000);
                         Functions.PlayScannerAudio("REPORT_RESPONSE_COPY SUSPECT_DOWN");
-                        Game.DisplayNotification("~b~Dispatch~w~: Copy, suspect is dead.");
+                        Dispatch.Copy("suspect is dead");
                     }));
                 if (Functions.IsPedArrested(suspect))
                     GameFiber.StartNew((() =>
                     {
-                        Game.DisplayNotification("~b~" + Settings.PlayerName + "~w~: Dispatch, suspect is in custody.");
+                        Dispatch.PlayerSay("Dispatch, suspect is in custody");
                         GameFiber.Wait(2000);
                         Functions.PlayScannerAudio("REPORT_RESPONSE_COPY SUSPECT_ARRESTED");
-                        Game.DisplayNotification("~b~Dispatch~w~: Copy, suspect is in custody.");
+                        Dispatch.Copy("suspect is in custody");
                     }));
                 End();
             }
