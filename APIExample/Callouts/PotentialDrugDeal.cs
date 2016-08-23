@@ -93,7 +93,7 @@ namespace FederalCallouts.Callouts
                 GameFiber.Wait(500);
                 Game.DisplayNotification("~b~Dispatch~w~: We need all the evidence we can get on this guy.");
                 GameFiber.Wait(15 * 1000);
-                Game.DisplayHelp("Press ~g~Y~w~ to begin surveillance", 45);
+                Game.DisplayHelp("Press ~g~" + Settings.StartKey.ToString() + "~w~ to begin surveillance", 45);
             }));
             Game.DisplaySubtitle("~w~Surveil the potential ~r~seller~w~. Do not get too close. Press ~g~Y~w~ to begin surveillance.", 6500);
             GameFiber.StartNew(() =>
