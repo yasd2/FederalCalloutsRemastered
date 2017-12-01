@@ -14,7 +14,7 @@ namespace FederalCallouts.Callouts
 #if DEBUG
     [CalloutInfo("Assassination", CalloutProbability.Always)]
 #else
-    [CalloutInfo("Assassination", CalloutProbability.High)]
+    [CalloutInfo("Assassination", CalloutProbability.Medium)]
 #endif
     public class Assassination : Callout
     {
@@ -23,6 +23,7 @@ namespace FederalCallouts.Callouts
          * More advanced suspect identification (age and race)
          * Advanced killer tracking (instead of forcing a wander every 10 seconds or so)
          */
+
         private Ped assassin;
         private Ped victim;
         private Vector3 SpawnPoint;
