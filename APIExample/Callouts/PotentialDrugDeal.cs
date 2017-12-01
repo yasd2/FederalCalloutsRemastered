@@ -144,13 +144,25 @@ namespace FederalCallouts.Callouts
                 indicator.Think();
             if (state == DrugCalloutState.EnRoute && Game.IsKeyDown(Settings.StartKey))
             {
-                buyer = new Ped(Extensions.FindCloseSpawn(seller.Position, 75f, 75f));
+                buyer = new Ped(Extensions.FindCloseSpawn(seller.Position, 60f, 60f));
                 sellerBlip.DisableRoute();
+#if DEBUG
+                buyer.AttachBlip().Color = Color.Blue;
+#endif
                 state = DrugCalloutState.Surveillance;
                 StartDeal();
             }
             if (noticeBlip.Exists())
                 noticeBlip.Position = seller.Position;
+
+            if(state == DrugCalloutState.Surveillance)
+            {
+                if(buyer.Exists() && !buyer.IsAlive)
+                {
+                    Game.DisplaySubtitle("~w~The  ~g~buyer~w~ has been killed.", 6500);
+                    End();
+                }
+            }
 
             if (state == DrugCalloutState.DealHappened)
             {
@@ -160,6 +172,7 @@ namespace FederalCallouts.Callouts
                     HandlePlayerMovingIn();
                 }
             }
+            
             if (cartelBackupEnRoute && vic.Exists() && cartel1.Exists())
             {
                 if ((double)Vector3Extension.DistanceTo(backupPos, vic.Position) <= 50.0f)
@@ -229,13 +242,14 @@ namespace FederalCallouts.Callouts
             Game.DisplaySubtitle("~w~Watch the  ~r~seller~w~. Any buyer does not need to be apprehended.", 6500);
             GameFiber.StartNew((() =>
             {
-                if (!buyer.Exists() && !seller.Exists()) { this.End(); }
+                if (!buyer.Exists() && !seller.Exists())
+                {
+                    Game.DisplaySubtitle("~w~Buyer or seller do not exist - ending callout", 6500);
+                    End();
+                }
                 int path = new Random().Next(1, 11);
                 seller.Tasks.StandStill(15);
-                //Rage.Native.NativeFunction.CallByName<uint>("TASK_GO_TO_ENTITY", buyer, (Entity)seller, -1, 2.0f, 100, 1073741824, 0);
-                //buyer.Tasks.GoStraightToPosition(seller.Position.AroundPosition(0.6f), 1.25f, 0.0f, 1f, 15000);
                 buyer.Tasks.FollowNavigationMeshToPosition(seller.Position.Around(0.6f), 0, 1.1f);
-                //Rage.Native.NativeFunction.CallByName<uint>("TASK_TURN_PED_TO_FACE_COORD", seller, buyer.Position.X, buyer.Position.Y, buyer.Position.Z, 0);
                 int distChecks = 0;
                 while (Vector3.Distance(seller.Position, buyer.Position) > 1f && distChecks < 100)
                 {
