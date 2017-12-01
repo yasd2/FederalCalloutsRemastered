@@ -12,7 +12,6 @@ C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\FederalC
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\LSPD First Response.dll
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\RAGENativeUI.dll
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\RagePluginHookSDK.dll
-C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\RagePluginHookSDK.xml
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.csprojResolveAssemblyReference.cache
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.dll
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.pdb
@@ -25,3 +24,4 @@ P:\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\VocalDispatch.dll
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.csprojResolveAssemblyReference.cache
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.dll
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Debug\FederalCallouts.pdb
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Debug\VocalDispatch.dll

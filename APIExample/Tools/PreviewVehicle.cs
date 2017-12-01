@@ -21,7 +21,7 @@ namespace FederalCallouts.Tools
             v.NeedsCollision = false;
             v.IsDriveable = false;
             v.LockStatus = VehicleLockStatus.Locked;
-            v.Invincible = true;
+            v.IsInvincible = true;
             v.Opacity = 50f;
 
         }

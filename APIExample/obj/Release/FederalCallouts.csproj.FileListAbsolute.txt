@@ -16,3 +16,12 @@ P:\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\VocalDispatch.dll
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.csprojResolveAssemblyReference.cache
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.dll
 P:\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.pdb
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\FederalCallouts.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\FederalCallouts.pdb
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\LSPD First Response.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\RAGENativeUI.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\RagePluginHookSDK.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\VocalDispatch.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.csprojResolveAssemblyReference.cache
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.dll
+C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.pdb

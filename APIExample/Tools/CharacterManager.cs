@@ -42,7 +42,7 @@ namespace FederalCallouts.Tools
                 savedVariation = new Dictionary<int, Vector2>();
                 int currDraw;
                 int currDrawTex;
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < 12; i++)
                 {
                     p.GetVariation(i, out currDraw, out currDrawTex);
                     savedVariation.Add(i, new Vector2(currDraw, currDrawTex));
