@@ -219,6 +219,8 @@ namespace FederalCallouts.Callouts
             if (cartel2.Exists()) { cartel2.Dismiss(); }
             if (cartel3.Exists()) { cartel3.Dismiss(); }
             if (cartel4.Exists()) { cartel4.Dismiss(); }
+            if(indicator != null)
+                indicator.Remove();
             base.End();
         }
 
@@ -326,7 +328,7 @@ namespace FederalCallouts.Callouts
 #if DEBUG
                     vicBlip = vic.AttachBlip();
 #endif
-                    vic.Invincible = true;
+                    vic.IsInvincible = true;
                     cartel1.WarpIntoVehicle(vic, (int)vic.GetFreeSeatIndex());
                     cartel2.WarpIntoVehicle(vic, (int)vic.GetFreeSeatIndex());
                     cartel3.WarpIntoVehicle(vic, (int)vic.GetFreeSeatIndex());
