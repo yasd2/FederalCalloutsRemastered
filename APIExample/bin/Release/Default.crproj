@@ -1,8 +1,5 @@
-<project outputDir="C:\Users\James\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\Confused" baseDir="C:\Users\James\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release" xmlns="http://confuser.codeplex.com">
+<project outputDir="C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\Confused" baseDir="C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release" xmlns="http://confuser.codeplex.com">
   <module path="FederalCallouts.dll">
-    <rule pattern="true" preset="aggressive" inherit="false">
-      <protection id="anti ildasm" />
-      <protection id="anti tamper" />
-    </rule>
+    <rule pattern="true" preset="aggressive" inherit="false" />
   </module>
 </project>

@@ -9,6 +9,21 @@
             IMAGE_OPTIONAL_HEADER.DllCharacteristics
             </summary>
         </member>
+        <member name="F:dnlib.PE.DllCharacteristics.Reserved1">
+            <summary/>
+        </member>
+        <member name="F:dnlib.PE.DllCharacteristics.Reserved2">
+            <summary/>
+        </member>
+        <member name="F:dnlib.PE.DllCharacteristics.Reserved3">
+            <summary/>
+        </member>
+        <member name="F:dnlib.PE.DllCharacteristics.Reserved4">
+            <summary/>
+        </member>
+        <member name="F:dnlib.PE.DllCharacteristics.Reserved5">
+            <summary/>
+        </member>
         <member name="F:dnlib.PE.DllCharacteristics.HighEntropyVA">
             <summary>Image can handle a high entropy 64-bit virtual address space.</summary>
         </member>
@@ -35,6 +50,9 @@
         </member>
         <member name="F:dnlib.PE.DllCharacteristics.WdmDriver">
             <summary>Driver uses WDM model</summary>
+        </member>
+        <member name="F:dnlib.PE.DllCharacteristics.GuardCf">
+            <summary>Image supports Control Flow Guard.</summary>
         </member>
         <member name="F:dnlib.PE.DllCharacteristics.TerminalServerAware">
             <summary/>
@@ -66,7 +84,8 @@
         </member>
         <member name="M:dnlib.IO.IBinaryReader.Read(System.Byte[],System.Int32,System.Int32)">
             <summary>
-            Reads <paramref name="length"/> bytes to <paramref name="buffer"/>
+            Reads <paramref name="length"/> bytes to <paramref name="buffer"/> and increments
+            <see cref="P:dnlib.IO.IBinaryReader.Position"/> by the number of bytes read.
             </summary>
             <param name="buffer">Buffer</param>
             <param name="offset">Offset in buffer where to place all read bytes</param>
@@ -1297,6 +1316,14 @@
             </summary>
             <param name="a">this</param>
             <returns>A <see cref="T:dnlib.DotNet.TypeSpec"/> or <c>null</c> if none found</returns>
+        </member>
+        <member name="M:dnlib.DotNet.Extensions.ResolveToken(dnlib.DotNet.ITokenResolver,System.UInt32)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="self">This</param>
+            <param name="token">The metadata token</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
         </member>
         <member name="M:dnlib.DotNet.Extensions.Error(dnlib.DotNet.ILogger,System.Object,System.String)">
             <summary>
@@ -2540,6 +2567,16 @@
             IMAGE_FILE_HEADER.TimeDateStamp value
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Writer.PEHeadersOptions.PointerToSymbolTable">
+            <summary>
+            IMAGE_FILE_HEADER.PointerToSymbolTable value
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.PEHeadersOptions.NumberOfSymbols">
+            <summary>
+            IMAGE_FILE_HEADER.NumberOfSymbols value
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.Writer.PEHeadersOptions.Characteristics">
             <summary>
             IMAGE_FILE_HEADER.Characteristics value. <see cref="F:dnlib.PE.Characteristics.Dll"/> bit
@@ -3553,6 +3590,50 @@
             is disabled and a slower <c>O(n)</c> lookup is performed.
             </summary>
         </member>
+        <member name="T:dnlib.DotNet.Resources.IResourceData">
+            <summary>
+            Implemented by all resource data
+            </summary>
+        </member>
+        <member name="T:dnlib.IO.IFileSection">
+            <summary>
+            Represents a section in a file
+            </summary>
+        </member>
+        <member name="P:dnlib.IO.IFileSection.StartOffset">
+            <summary>
+            Start offset of the section in the file
+            </summary>
+        </member>
+        <member name="P:dnlib.IO.IFileSection.EndOffset">
+            <summary>
+            End offset of the section in the file. This is one byte after the last
+            valid offset in the section.
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.IResourceData.WriteData(System.IO.BinaryWriter,System.Runtime.Serialization.IFormatter)">
+            <summary>
+            Writes the data
+            </summary>
+            <param name="writer">Writer</param>
+            <param name="formatter">Formatter if needed by implementer</param>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.IResourceData.Code">
+            <summary>
+            Gets the type of data
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.IResourceData.StartOffset">
+            <summary>
+            Start offset of the section in the file
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.IResourceData.EndOffset">
+            <summary>
+            End offset of the section in the file. This is one byte after the last
+            valid offset in the section.
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.PropertyAttributes">
             <summary>
             Property attributes, see CorHdr.h/CorPropertyAttr
@@ -3696,22 +3777,6 @@
         <member name="T:dnlib.DotNet.MD.DotNetStream">
             <summary>
             .NET metadata stream
-            </summary>
-        </member>
-        <member name="T:dnlib.IO.IFileSection">
-            <summary>
-            Represents a section in a file
-            </summary>
-        </member>
-        <member name="P:dnlib.IO.IFileSection.StartOffset">
-            <summary>
-            Start offset of the section in the file
-            </summary>
-        </member>
-        <member name="P:dnlib.IO.IFileSection.EndOffset">
-            <summary>
-            End offset of the section in the file. This is one byte after the last
-            valid offset in the section.
             </summary>
         </member>
         <member name="F:dnlib.DotNet.MD.DotNetStream.imageStream">
@@ -6873,6 +6938,11 @@
         <member name="M:dnlib.DotNet.Emit.DynamicMethodBodyReader.ReadInlineType(dnlib.DotNet.Emit.Instruction)">
             <inheritdoc/>
         </member>
+        <member name="T:dnlib.DotNet.CorLibTypes">
+            <summary>
+            Default implementation of <see cref="T:dnlib.DotNet.ICorLibTypes"/>
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.ICorLibTypes">
             <summary>
             Access to .NET core library's simple types
@@ -8935,6 +9005,11 @@
             field value and create a new Field RVA.
             </summary>
         </member>
+        <member name="P:dnlib.DotNet.Writer.MetaData.NumberOfMethods">
+            <summary>
+            Gets the number of methods that will be written.
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.Writer.MaxStackCalculator">
             <summary>
             Calculates max stack usage by using a simple pass over all instructions. This value
@@ -10969,6 +11044,59 @@
             Gets/sets the index
             </summary>
         </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceElementSet">
+            <summary>
+            Resource element set
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceElementSet.Add(dnlib.DotNet.Resources.ResourceElement)">
+            <summary>
+            Adds a new resource to the set, overwriting any existing resource
+            </summary>
+            <param name="elem"></param>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceElementSet.Count">
+            <summary>
+            Gets the number of elements in the set
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceElementSet.ResourceElements">
+            <summary>
+            Gets all resource elements
+            </summary>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.BuiltInResourceData">
+            <summary>
+            Built-in resource data
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BuiltInResourceData.#ctor(dnlib.DotNet.Resources.ResourceTypeCode,System.Object)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="code">Type of data</param>
+            <param name="data">Data</param>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BuiltInResourceData.WriteData(System.IO.BinaryWriter,System.Runtime.Serialization.IFormatter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BuiltInResourceData.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.BuiltInResourceData.Data">
+            <summary>
+            Gets the data
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.BuiltInResourceData.Code">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.BuiltInResourceData.StartOffset">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.BuiltInResourceData.EndOffset">
+            <inheritdoc/>
+        </member>
         <member name="T:dnlib.DotNet.RecursionCounter">
             <summary>
             Recursion counter
@@ -11267,6 +11395,19 @@
         <member name="F:dnlib.DotNet.ManifestResourceAttributes.Private">
             <summary>The Resource is private to the Assembly.</summary>
         </member>
+        <member name="T:dnlib.DotNet.ITokenResolver">
+            <summary>
+            Resolves tokens
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ITokenResolver.ResolveToken(System.UInt32,dnlib.DotNet.GenericParamContext)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="token">The metadata token</param>
+            <param name="gpContext">Generic parameter context</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
+        </member>
         <member name="T:dnlib.DotNet.LoggerEvent">
             <summary>
             <see cref="T:dnlib.DotNet.ILogger"/> events
@@ -11468,6 +11609,9 @@
         </member>
         <member name="F:dnlib.DotNet.EventDef.otherMethods">
             <summary/>
+        </member>
+        <member name="M:dnlib.DotNet.EventDef.ResetMethods">
+            <summary>Reset <see cref="P:dnlib.DotNet.EventDef.AddMethod"/>, <see cref="P:dnlib.DotNet.EventDef.InvokeMethod"/>, <see cref="P:dnlib.DotNet.EventDef.RemoveMethod"/>, <see cref="P:dnlib.DotNet.EventDef.OtherMethods"/></summary>
         </member>
         <member name="F:dnlib.DotNet.EventDef.declaringType2">
             <summary/>
@@ -12943,6 +13087,26 @@
         <member name="P:dnlib.DotNet.Writer.BinaryReaderChunk.RVA">
             <inheritdoc/>
         </member>
+        <member name="T:dnlib.DotNet.WinMDStatus">
+            <summary>
+            WinMD status
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.WinMDStatus.None">
+            <summary>
+            This is not a WinMD file
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.WinMDStatus.Pure">
+            <summary>
+            This is a pure WinMD file (not managed)
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.WinMDStatus.Managed">
+            <summary>
+            This is a managed WinMD file (created by eg. winmdexp.exe)
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.TypeAttributes">
             <summary>
             TypeDef and ExportedType flags. See CorHdr.h/CorTypeAttr
@@ -13203,6 +13367,9 @@
         <member name="M:dnlib.DotNet.MethodDef.GetImplMap_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.MethodDef.implMap"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.MethodDef.ResetImplMap">
+            <summary>Reset <see cref="P:dnlib.DotNet.MethodDef.ImplMap"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.MethodDef.methodBody">
             <summary/>
         </member>
@@ -13211,7 +13378,8 @@
         </member>
         <member name="M:dnlib.DotNet.MethodDef.FreeMethodBody">
             <summary>
-            Frees the method body if it has been loaded.
+            Frees the method body if it has been loaded. This does nothing if <see cref="P:dnlib.DotNet.MethodDef.CanFreeMethodBody"/>
+            returns <c>false</c>.
             </summary>
         </member>
         <member name="M:dnlib.DotNet.MethodDef.GetMethodBody_NoLock">
@@ -13383,6 +13551,11 @@
         <member name="P:dnlib.DotNet.MethodDef.MethodBody">
             <summary>
             Gets/sets the method body. See also <see cref="P:dnlib.DotNet.MethodDef.Body"/>
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.MethodDef.CanFreeMethodBody">
+            <summary>
+            true if <see cref="M:dnlib.DotNet.MethodDef.FreeMethodBody"/> can free the method body
             </summary>
         </member>
         <member name="P:dnlib.DotNet.MethodDef.CustomAttributes">
@@ -14509,11 +14682,83 @@
             Creating the metadata tables has just begun
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateTypeDefRids">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateTypeDefRids"/>.
+            Before allocating all TypeDef RIDs
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids"/>.
+            Before allocating all MemberDef RIDs
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids0">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids0"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids1">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids1"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids2">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids2"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids3">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids3"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDAllocateMemberDefRids4">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids4"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDMemberDefRidsAllocated">
             <summary>
             Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.MemberDefRidsAllocated"/>.
             The <c>rid</c>s of types, fields, methods, events, properties and parameters are
             now known.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDInitializeTypeDefsAndMemberDefs0">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs0"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDInitializeTypeDefsAndMemberDefs1">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs1"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDInitializeTypeDefsAndMemberDefs2">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs2"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDInitializeTypeDefsAndMemberDefs3">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs3"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDInitializeTypeDefsAndMemberDefs4">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs4"/>.
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDMemberDefsInitialized">
@@ -14524,11 +14769,47 @@
             written yet.
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDBeforeSortTables">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.BeforeSortTables"/>.
+            Before sorting most tables
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDMostTablesSorted">
             <summary>
             Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.MostTablesSorted"/>.
             Most of the tables that should be sorted have been sorted. The <c>CustomAttribute</c>
             table is still unsorted since it's not been created yet.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteTypeDefAndMemberDefCustomAttributes0">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes0"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteTypeDefAndMemberDefCustomAttributes1">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes1"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteTypeDefAndMemberDefCustomAttributes2">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes2"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteTypeDefAndMemberDefCustomAttributes3">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes3"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteTypeDefAndMemberDefCustomAttributes4">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes4"/>.
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDMemberDefCustomAttributesWritten">
@@ -14554,6 +14835,66 @@
             <summary>
             Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.BeginWriteMethodBodies"/>.
             All method bodies are about to be written
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies0">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies0"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies1">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies1"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies2">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies2"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies3">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies3"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies4">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies4"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies5">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies5"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies6">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies6"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies7">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies7"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies8">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies8"/>.
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDWriteMethodBodies9">
+            <summary>
+            Original event: <see cref="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies9"/>.
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.ModuleWriterEvent.MDEndWriteMethodBodies">
@@ -14688,6 +15029,9 @@
             Gets/sets the locals sig
             </summary>
         </member>
+        <member name="P:dnlib.DotNet.StandAloneSig.ContainsGenericParameter">
+            <inheritdoc/>
+        </member>
         <member name="T:dnlib.DotNet.StandAloneSigUser">
             <summary>
             A StandAloneSig row created by the user and not present in the original .NET file
@@ -14781,6 +15125,13 @@
         </member>
         <member name="M:dnlib.DotNet.Resolver.Resolve(dnlib.DotNet.MemberRef)">
             <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resolver.ProjectWinMDRefs">
+            <summary>
+            <c>true</c> to project WinMD types to CLR types, eg. <c>Windows.UI.Xaml.Interop.TypeName</c>
+            gets converted to <c>System.Type</c> before trying to resolve the type. This is enabled
+            by default.
+            </summary>
         </member>
         <member name="T:dnlib.DotNet.Pdb.PdbWriter">
             <summary>
@@ -15461,8 +15812,96 @@
             paths, not just the module search paths and the GAC.</param>
             <returns>A new <see cref="T:dnlib.DotNet.ModuleContext"/> instance</returns>
         </member>
+        <member name="M:dnlib.DotNet.ModuleDef.LoadEverything">
+            <summary>
+            Load everything in this module. All types, fields, asm refs, etc are loaded, all their
+            properties are read to make sure everything is cached.
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.LoadEverything(dnlib.Threading.ICancellationToken)">
+            <summary>
+            Load everything in this module. All types, fields, asm refs, etc are loaded, all their
+            properties are read to make sure everything is cached.
+            </summary>
+            <param name="cancellationToken">Cancellation token or <c>null</c></param>
+        </member>
         <member name="M:dnlib.DotNet.ModuleDef.ToString">
             <inheritdoc/>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.ResolveToken(dnlib.DotNet.MDToken)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="mdToken">The metadata token</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="mdToken"/> is invalid</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.ResolveToken(dnlib.DotNet.MDToken,dnlib.DotNet.GenericParamContext)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="mdToken">The metadata token</param>
+            <param name="gpContext">Generic parameter context</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="mdToken"/> is invalid</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.ResolveToken(System.UInt32)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="token">The metadata token</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.ResolveToken(System.UInt32,dnlib.DotNet.GenericParamContext)">
+            <summary>
+            Resolves a token
+            </summary>
+            <param name="token">The metadata token</param>
+            <param name="gpContext">Generic parameter context</param>
+            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetAssemblyRefs">
+            <summary>
+            Gets all <see cref="T:dnlib.DotNet.AssemblyRef"/>s
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetModuleRefs">
+            <summary>
+            Gets all <see cref="T:dnlib.DotNet.ModuleRef"/>s
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetMemberRefs">
+            <summary>
+            Gets all <see cref="T:dnlib.DotNet.MemberRef"/>s. <see cref="T:dnlib.DotNet.MemberRef"/>s with generic parameters
+            aren't cached and a new copy is always returned.
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetMemberRefs(dnlib.DotNet.GenericParamContext)">
+            <summary>
+            Gets all <see cref="T:dnlib.DotNet.MemberRef"/>s. <see cref="T:dnlib.DotNet.MemberRef"/>s with generic parameters
+            aren't cached and a new copy is always returned.
+            </summary>
+            <param name="gpContext">Generic parameter context</param>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetTypeRefs">
+            <summary>
+            Gets all <see cref="T:dnlib.DotNet.TypeRef"/>s
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.GetAssemblyRef(dnlib.DotNet.UTF8String)">
+            <summary>
+            Finds an assembly reference by name. If there's more than one, pick the one with
+            the greatest version number.
+            </summary>
+            <param name="simpleName">Simple name of assembly (eg. "mscorlib")</param>
+            <returns>The found <see cref="T:dnlib.DotNet.AssemblyRef"/> or <c>null</c> if there's no such
+            assembly reference.</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDef.IsGreaterAssemblyRefVersion(dnlib.DotNet.AssemblyRef,dnlib.DotNet.AssemblyRef)">
+            <summary>
+            Compare asm refs' version
+            </summary>
+            <param name="found">First asm ref</param>
+            <param name="newOne">New asm ref</param>
+            <returns></returns>
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.MDToken">
             <inheritdoc/>
@@ -15475,6 +15914,11 @@
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.ResolutionScopeTag">
             <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.Tag">
+            <summary>
+            Gets/sets a user value. This is never used by dnlib. This property isn't thread safe.
+            </summary>
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.ScopeType">
             <inheritdoc/>
@@ -15520,7 +15964,7 @@
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.Types">
             <summary>
-            Gets a list of all non-nested <see cref="T:dnlib.DotNet.TypeDef"/>s
+            Gets a list of all non-nested <see cref="T:dnlib.DotNet.TypeDef"/>s. See also <see cref="M:dnlib.DotNet.ModuleDef.GetTypes"/>
             </summary>
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.ExportedTypes">
@@ -15667,6 +16111,41 @@
             Gets/sets the runtime version which is stored in the MetaData header.
             See <see cref="T:dnlib.DotNet.MD.MDHeaderRuntimeVersion"/>.
             </summary>
+            <remarks>Not thread safe</remarks>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.WinMDStatus">
+            <summary>
+            Gets the WinMD status
+            </summary>
+            <remarks>Not thread safe</remarks>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.IsWinMD">
+            <summary>
+            <c>true</c> if this is a WinMD file
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.IsManagedWinMD">
+            <summary>
+            <c>true</c> if this is a managed WinMD file
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.IsPureWinMD">
+            <summary>
+            <c>true</c> if this is a pure (non-managed) WinMD file
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.RuntimeVersionWinMD">
+            <summary>
+            Gets the CLR runtime version of the managed WinMD file or <c>null</c> if none. This is
+            similar to <see cref="P:dnlib.DotNet.ModuleDef.RuntimeVersion"/> for normal non-WinMD files.
+            </summary>
+            <remarks>Not thread safe</remarks>
+        </member>
+        <member name="P:dnlib.DotNet.ModuleDef.WinMDVersion">
+            <summary>
+            Gets the WinMD version or <c>null</c> if none
+            </summary>
+            <remarks>Not thread safe</remarks>
         </member>
         <member name="P:dnlib.DotNet.ModuleDef.IsClr10">
             <summary>
@@ -15842,15 +16321,12 @@
             Resolves instruction operands
             </summary>
         </member>
-        <member name="M:dnlib.DotNet.Emit.IInstructionOperandResolver.ResolveToken(System.UInt32,dnlib.DotNet.GenericParamContext)">
+        <member name="T:dnlib.DotNet.Emit.IStringResolver">
             <summary>
-            Resolves a token
+            Reads strings from #US heap
             </summary>
-            <param name="token">The metadata token</param>
-            <param name="gpContext">Generic parameter context</param>
-            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
         </member>
-        <member name="M:dnlib.DotNet.Emit.IInstructionOperandResolver.ReadUserString(System.UInt32)">
+        <member name="M:dnlib.DotNet.Emit.IStringResolver.ReadUserString(System.UInt32)">
             <summary>
             Reads a string from the #US heap
             </summary>
@@ -15982,6 +16458,29 @@
             Creates a <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance from a memory location
             </summary>
             <param name="addr">Address of a .NET module/assembly</param>
+            <param name="options">Module creation options or <c>null</c></param>
+            <returns>A new <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDefMD.Load(dnlib.PE.IPEImage)">
+            <summary>
+            Creates a <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance
+            </summary>
+            <param name="peImage">PE image</param>
+            <returns>A new <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDefMD.Load(dnlib.PE.IPEImage,dnlib.DotNet.ModuleContext)">
+            <summary>
+            Creates a <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance
+            </summary>
+            <param name="peImage">PE image</param>
+            <param name="context">Module context or <c>null</c></param>
+            <returns>A new <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance</returns>
+        </member>
+        <member name="M:dnlib.DotNet.ModuleDefMD.Load(dnlib.PE.IPEImage,dnlib.DotNet.ModuleCreationOptions)">
+            <summary>
+            Creates a <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance
+            </summary>
+            <param name="peImage">PE image</param>
             <param name="options">Module creation options or <c>null</c></param>
             <returns>A new <see cref="T:dnlib.DotNet.ModuleDefMD"/> instance</returns>
         </member>
@@ -16122,21 +16621,6 @@
         <member name="M:dnlib.DotNet.ModuleDefMD.Dispose(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.ResolveToken(dnlib.DotNet.MDToken)">
-            <summary>
-            Resolves a token
-            </summary>
-            <param name="mdToken">The metadata token</param>
-            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="mdToken"/> is invalid</returns>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.ResolveToken(dnlib.DotNet.MDToken,dnlib.DotNet.GenericParamContext)">
-            <summary>
-            Resolves a token
-            </summary>
-            <param name="mdToken">The metadata token</param>
-            <param name="gpContext">Generic parameter context</param>
-            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="mdToken"/> is invalid</returns>
-        </member>
         <member name="M:dnlib.DotNet.ModuleDefMD.ResolveToken(System.Int32)">
             <summary>
             Resolves a token
@@ -16150,13 +16634,6 @@
             </summary>
             <param name="token">The metadata token</param>
             <param name="gpContext">Generic parameter context</param>
-            <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.ResolveToken(System.UInt32)">
-            <summary>
-            Resolves a token
-            </summary>
-            <param name="token">The metadata token</param>
             <returns>A <see cref="T:dnlib.DotNet.IMDTokenProvider"/> or <c>null</c> if <paramref name="token"/> is invalid</returns>
         </member>
         <member name="M:dnlib.DotNet.ModuleDefMD.ResolveToken(System.UInt32,dnlib.DotNet.GenericParamContext)">
@@ -16733,38 +17210,6 @@
             <summary>
             Gets the managed entry point (a Method or a File) or null if none
             </summary>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.GetAssemblyRefs">
-            <summary>
-            Gets all <see cref="T:dnlib.DotNet.AssemblyRef"/>s
-            </summary>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.GetModuleRefs">
-            <summary>
-            Gets all <see cref="T:dnlib.DotNet.ModuleRef"/>s
-            </summary>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.GetMemberRefs">
-            <summary>
-            Gets all <see cref="T:dnlib.DotNet.MemberRef"/>s. <see cref="T:dnlib.DotNet.MemberRef"/>s with generic parameters
-            aren't cached and a new copy is always returned.
-            </summary>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.GetMemberRefs(dnlib.DotNet.GenericParamContext)">
-            <summary>
-            Gets all <see cref="T:dnlib.DotNet.MemberRef"/>s. <see cref="T:dnlib.DotNet.MemberRef"/>s with generic parameters
-            aren't cached and a new copy is always returned.
-            </summary>
-            <param name="gpContext">Generic parameter context</param>
-        </member>
-        <member name="M:dnlib.DotNet.ModuleDefMD.GetAssemblyRef(dnlib.DotNet.UTF8String)">
-            <summary>
-            Finds an assembly reference by name. If there's more than one, pick the one with
-            the greatest version number.
-            </summary>
-            <param name="simpleName">Simple name of assembly (eg. "mscorlib")</param>
-            <returns>The found <see cref="T:dnlib.DotNet.AssemblyRef"/> or <c>null</c> if there's no such
-            assembly reference.</returns>
         </member>
         <member name="M:dnlib.DotNet.ModuleDefMD.ReadField(System.UInt32)">
             <summary>
@@ -17361,6 +17806,11 @@
             CIL (managed code) body
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Emit.CilBody.SMALL_HEADER_SIZE">
+            <summary>
+            Size of a small header
+            </summary>
+        </member>
         <member name="M:dnlib.DotNet.Emit.CilBody.#ctor">
             <summary>
             Default constructor
@@ -17414,6 +17864,22 @@
         <member name="P:dnlib.DotNet.Emit.CilBody.InitLocals">
             <summary>
             Gets/sets the init locals flag. This is only valid if the method has any locals.
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Emit.CilBody.HeaderSize">
+            <summary>
+            Gets/sets the size in bytes of the method body header. The instructions immediately follow
+            the header.
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Emit.CilBody.IsSmallHeader">
+            <summary>
+            <c>true</c> if it was a small body header (<see cref="P:dnlib.DotNet.Emit.CilBody.HeaderSize"/> is <c>1</c>)
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Emit.CilBody.IsBigHeader">
+            <summary>
+            <c>true</c> if it was a big body header
             </summary>
         </member>
         <member name="P:dnlib.DotNet.Emit.CilBody.MaxStack">
@@ -17875,18 +18341,11 @@
             IImageStream for unmanaged memory
             </summary>
         </member>
-        <member name="M:dnlib.IO.UnmanagedMemoryImageStream.#ctor(dnlib.IO.FileOffset,System.IntPtr,System.Int64)">
+        <member name="M:dnlib.IO.UnmanagedMemoryImageStream.#ctor(dnlib.IO.UnmanagedMemoryStreamCreator,dnlib.IO.FileOffset,System.Int64,System.Int64)">
             <summary>
             Constructor
             </summary>
-            <param name="fileOffset">File offset of data</param>
-            <param name="addr">Address of data</param>
-            <param name="length">Length of data</param>
-        </member>
-        <member name="M:dnlib.IO.UnmanagedMemoryImageStream.#ctor(dnlib.IO.FileOffset,System.Byte*,System.Int64)">
-            <summary>
-            Constructor
-            </summary>
+            <param name="owner">Owner of memory</param>
             <param name="fileOffset">File offset of data</param>
             <param name="baseAddr">Address of data</param>
             <param name="length">Length of data</param>
@@ -19263,6 +19722,32 @@
             <returns>A new <see cref="T:dnlib.DotNet.TypeSig"/> instance or <c>null</c> if
             <paramref name="signature"/> is invalid.</returns>
         </member>
+        <member name="M:dnlib.DotNet.SignatureReader.ReadTypeSig(dnlib.DotNet.ISignatureReaderHelper,dnlib.DotNet.ICorLibTypes,System.Byte[],dnlib.DotNet.GenericParamContext,System.Byte[]@)">
+            <summary>
+            Reads a <see cref="T:dnlib.DotNet.TypeSig"/> signature
+            </summary>
+            <param name="helper">Token resolver</param>
+            <param name="corLibTypes">A <see cref="T:dnlib.DotNet.ICorLibTypes"/> instance</param>
+            <param name="signature">The signature data</param>
+            <param name="gpContext">Generic parameter context</param>
+            <param name="extraData">If there's any extra data after the signature, it's saved
+            here, else this will be <c>null</c></param>
+            <returns>A new <see cref="T:dnlib.DotNet.TypeSig"/> instance or <c>null</c> if
+            <paramref name="signature"/> is invalid.</returns>
+        </member>
+        <member name="M:dnlib.DotNet.SignatureReader.ReadTypeSig(dnlib.DotNet.ISignatureReaderHelper,dnlib.DotNet.ICorLibTypes,dnlib.IO.IBinaryReader,dnlib.DotNet.GenericParamContext,System.Byte[]@)">
+            <summary>
+            Reads a <see cref="T:dnlib.DotNet.TypeSig"/> signature
+            </summary>
+            <param name="helper">Token resolver</param>
+            <param name="corLibTypes">A <see cref="T:dnlib.DotNet.ICorLibTypes"/> instance</param>
+            <param name="signature">The signature reader which will be owned by us</param>
+            <param name="gpContext">Generic parameter context</param>
+            <param name="extraData">If there's any extra data after the signature, it's saved
+            here, else this will be <c>null</c></param>
+            <returns>A new <see cref="T:dnlib.DotNet.TypeSig"/> instance or <c>null</c> if
+            <paramref name="signature"/> is invalid.</returns>
+        </member>
         <member name="M:dnlib.DotNet.SignatureReader.#ctor(dnlib.DotNet.ModuleDefMD,System.UInt32,dnlib.DotNet.GenericParamContext)">
             <summary>
             Constructor
@@ -19335,6 +19820,69 @@
         </member>
         <member name="M:dnlib.DotNet.SignatureReader.Dispose">
             <inheritdoc/>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceWriter">
+            <summary>
+            Writes .NET resources
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceWriter.Write(dnlib.DotNet.ModuleDef,System.IO.Stream,dnlib.DotNet.Resources.ResourceElementSet)">
+            <summary>
+            Write .NET resources
+            </summary>
+            <param name="module">Owner module</param>
+            <param name="stream">Output stream</param>
+            <param name="resources">.NET resources</param>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceReaderException">
+            <summary>
+            Thrown by <see cref="T:dnlib.DotNet.Resources.ResourceReader"/>
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceReaderException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">Message</param>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.CreateResourceDataDelegate">
+            <summary>
+            Gets called to create a <see cref="T:dnlib.DotNet.Resources.IResourceData"/> from serialized data. Returns <c>null</c>
+            if a default <see cref="T:dnlib.DotNet.Resources.IResourceData"/> instance should be created.
+            </summary>
+            <param name="resourceDataCreator">ResourceDataCreator</param>
+            <param name="type">Serialized type</param>
+            <param name="serializedData">Serialized data</param>
+            <returns></returns>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceReader">
+            <summary>
+            Reads .NET resources
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceReader.CouldBeResourcesFile(dnlib.IO.IBinaryReader)">
+            <summary>
+            Returns true if it's possibly resources file data
+            </summary>
+            <param name="reader">Reader</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceReader.Read(dnlib.DotNet.ModuleDef,dnlib.IO.IBinaryReader)">
+            <summary>
+            Reads a .NET resource
+            </summary>
+            <param name="module">Owner module</param>
+            <param name="reader">Data of resource</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceReader.Read(dnlib.DotNet.ModuleDef,dnlib.IO.IBinaryReader,dnlib.DotNet.Resources.CreateResourceDataDelegate)">
+            <summary>
+            Reads a .NET resource
+            </summary>
+            <param name="module">Owner module</param>
+            <param name="reader">Data of resource</param>
+            <param name="createResourceDataDelegate">Call back that gets called to create a <see cref="T:dnlib.DotNet.Resources.IResourceData"/> instance. Can be null.</param>
+            <returns></returns>
         </member>
         <member name="T:dnlib.DotNet.ParameterList">
             <summary>
@@ -19683,6 +20231,15 @@
             <param name="table">Table type</param>
             <param name="name">Table name</param>
             <param name="columns">All columns</param>
+        </member>
+        <member name="M:dnlib.DotNet.MD.TableInfo.#ctor(dnlib.DotNet.MD.Table,System.String,System.Collections.Generic.IList{dnlib.DotNet.MD.ColumnInfo},System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="table">Table type</param>
+            <param name="name">Table name</param>
+            <param name="columns">All columns</param>
+            <param name="rowSize">Row size</param>
         </member>
         <member name="P:dnlib.DotNet.MD.TableInfo.Table">
             <summary>
@@ -20245,7 +20802,7 @@
         <member name="F:dnlib.PE.Characteristics.LineNumsStripped">
             <summary>Line nunbers stripped from file.</summary>
         </member>
-        <member name="F:dnlib.PE.Characteristics.LocalsSymsStripped">
+        <member name="F:dnlib.PE.Characteristics.LocalSymsStripped">
             <summary>Local symbols stripped from file.</summary>
         </member>
         <member name="F:dnlib.PE.Characteristics.AggressiveWsTrim">
@@ -20253,6 +20810,9 @@
         </member>
         <member name="F:dnlib.PE.Characteristics.LargeAddressAware">
             <summary>App can handle >2gb addresses</summary>
+        </member>
+        <member name="F:dnlib.PE.Characteristics.Reserved1">
+            <summary/>
         </member>
         <member name="F:dnlib.PE.Characteristics.BytesReversedLo">
             <summary>Bytes of machine word are reversed.</summary>
@@ -20916,6 +21476,13 @@
             </summary>
             <returns>A new <see cref="T:dnlib.DotNet.MD.RidList"/> instance</returns>
         </member>
+        <member name="P:dnlib.DotNet.MD.IMetaData.IsCompressed">
+            <summary>
+            <c>true</c> if the compressed (normal) metadata is used, <c>false</c> if the non-compressed
+            (Edit N' Continue) metadata is used. This can be <c>false</c> even if the table stream
+            is <c>#~</c> but that's very uncommon.
+            </summary>
+        </member>
         <member name="P:dnlib.DotNet.MD.IMetaData.ImageCor20Header">
             <summary>
             Gets the .NET header
@@ -21008,6 +21575,19 @@
             </summary>
             <param name="offset">Offset of blob</param>
             <returns>A new stream</returns>
+        </member>
+        <member name="T:dnlib.DotNet.FrameworkRedirect">
+            <summary>
+            Redirects .NET framework assembly references from older to newer versions
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.FrameworkRedirect.ApplyFrameworkRedirect(dnlib.DotNet.IAssembly@,dnlib.DotNet.ModuleDef)">
+            <summary>
+            Redirects a .NET framework assembly from an older version to the correct version
+            loaded at runtime.
+            </summary>
+            <param name="assembly">Current assembly reference that might get updated</param>
+            <param name="sourceModule">Module using the assembly reference</param>
         </member>
         <member name="T:dnlib.DotNet.ExportedType">
             <summary>
@@ -22268,6 +22848,24 @@
             Gets/sets the private exponent
             </summary>
         </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceElement">
+            <summary>
+            Resource element
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceElement.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceElement.Name">
+            <summary>
+            Name of resource
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceElement.ResourceData">
+            <summary>
+            Data of resource
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.PropertyDef">
             <summary>
             A high-level representation of a row in the Property table
@@ -22311,6 +22909,9 @@
         <member name="M:dnlib.DotNet.PropertyDef.GetConstant_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.PropertyDef.constant"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.PropertyDef.ResetConstant">
+            <summary>Reset <see cref="P:dnlib.DotNet.PropertyDef.Constant"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.PropertyDef.customAttributes">
             <summary/>
         </member>
@@ -22331,6 +22932,9 @@
         </member>
         <member name="F:dnlib.DotNet.PropertyDef.otherMethods">
             <summary/>
+        </member>
+        <member name="M:dnlib.DotNet.PropertyDef.ResetMethods">
+            <summary>Reset <see cref="P:dnlib.DotNet.PropertyDef.GetMethods"/>, <see cref="P:dnlib.DotNet.PropertyDef.SetMethods"/>, <see cref="P:dnlib.DotNet.PropertyDef.OtherMethods"/></summary>
         </member>
         <member name="F:dnlib.DotNet.PropertyDef.declaringType2">
             <summary/>
@@ -22590,7 +23194,7 @@
             <returns>All <see cref="T:dnlib.DotNet.Pdb.PdbDocument"/>s if <paramref name="returnDocs"/> is <c>true</c>
             or <c>null</c> if <paramref name="returnDocs"/> is <c>false</c>.</returns>
         </member>
-        <member name="M:dnlib.DotNet.Pdb.PdbState.Initialize(dnlib.DotNet.Emit.CilBody,System.UInt32)">
+        <member name="M:dnlib.DotNet.Pdb.PdbState.InitializeDontCall(dnlib.DotNet.Emit.CilBody,System.UInt32)">
             <summary>
             Initializes a <see cref="T:dnlib.DotNet.Emit.CilBody"/> with information found in the PDB file. The
             instructions in <paramref name="body"/> must have valid offsets. This method is
@@ -22716,6 +23320,16 @@
             <param name="index">Column index</param>
             <param name="name">The column name</param>
             <param name="columnSize">Column size</param>
+        </member>
+        <member name="M:dnlib.DotNet.MD.ColumnInfo.#ctor(System.Byte,System.String,dnlib.DotNet.MD.ColumnSize,System.Byte,System.Byte)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="index">Column index</param>
+            <param name="name">The column name</param>
+            <param name="columnSize">Column size</param>
+            <param name="offset">Offset of column</param>
+            <param name="size">Size of column</param>
         </member>
         <member name="M:dnlib.DotNet.MD.ColumnInfo.Read(dnlib.IO.IBinaryReader)">
             <summary>
@@ -23016,14 +23630,14 @@
         </member>
         <member name="M:dnlib.DotNet.Importer.Import(dnlib.DotNet.FieldDef)">
             <summary>
-            Imports a <see cref="T:dnlib.DotNet.FieldDef"/> as a <see cref="T:dnlib.DotNet.MemberRef"/>
+            Imports a <see cref="T:dnlib.DotNet.FieldDef"/> as an <see cref="T:dnlib.DotNet.IField"/>
             </summary>
             <param name="field">The field</param>
             <returns>The imported type or <c>null</c> if <paramref name="field"/> is invalid</returns>
         </member>
         <member name="M:dnlib.DotNet.Importer.Import(dnlib.DotNet.MethodDef)">
             <summary>
-            Imports a <see cref="T:dnlib.DotNet.MethodDef"/> as a <see cref="T:dnlib.DotNet.MemberRef"/>
+            Imports a <see cref="T:dnlib.DotNet.MethodDef"/> as an <see cref="T:dnlib.DotNet.IMethod"/>
             </summary>
             <param name="method">The method</param>
             <returns>The imported method or <c>null</c> if <paramref name="method"/> is invalid</returns>
@@ -24130,10 +24744,70 @@
             Creating the tables has just begun
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateTypeDefRids">
+            <summary>
+            Before allocating all TypeDef RIDs
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids">
+            <summary>
+            Before allocating all MemberDef RIDs
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids0">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids1">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids2">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids3">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.AllocateMemberDefRids4">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.MemberDefRidsAllocated">
             <summary>
             The <c>rid</c>s of types, fields, methods, events, properties and parameters are
             now known.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs0">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs1">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs2">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs3">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.InitializeTypeDefsAndMemberDefs4">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.MemberDefsInitialized">
@@ -24143,10 +24817,40 @@
             written yet.
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.BeforeSortTables">
+            <summary>
+            Before sorting most tables
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.MostTablesSorted">
             <summary>
             Most of the tables that should be sorted have been sorted. The <c>CustomAttribute</c>
             table is still unsorted since it's not been created yet.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes0">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes1">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes2">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes3">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteTypeDefAndMemberDefCustomAttributes4">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.MemberDefCustomAttributesWritten">
@@ -24168,6 +24872,56 @@
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.BeginWriteMethodBodies">
             <summary>
             All method bodies are about to be written
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies0">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies1">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies2">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies3">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies4">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies5">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies6">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies7">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies8">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Writer.MetaDataEvent.WriteMethodBodies9">
+            <summary>
+            Sent by the metadata writer so a UI can update its progress bar
             </summary>
         </member>
         <member name="F:dnlib.DotNet.Writer.MetaDataEvent.EndWriteMethodBodies">
@@ -24521,6 +25275,11 @@
             Compares an event's declaring type
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.SigComparerOptions.CompareDeclaringTypes">
+            <summary>
+            Compares method / field / property / event declaring types
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.SigComparerOptions.CompareSentinelParams">
             <summary>
             Compares parameters after a sentinel in method sigs. Should not be enabled when
@@ -24611,6 +25370,12 @@
             a <see cref="T:dnlib.DotNet.MemberRef"/>
             </summary>
         </member>
+        <member name="F:dnlib.DotNet.SigComparerOptions.PrivateScopeIsComparable">
+            <summary>
+            A field that is <see cref="F:dnlib.DotNet.FieldAttributes.PrivateScope"/> and a method that is
+            <see cref="F:dnlib.DotNet.MethodAttributes.PrivateScope"/> can compare equal to a <see cref="T:dnlib.DotNet.MemberRef"/>
+            </summary>
+        </member>
         <member name="F:dnlib.DotNet.SigComparerOptions.RawSignatureCompare">
             <summary>
             Raw (bit by bit) comparison of signatures. This matches what the CLR does when it
@@ -24630,6 +25395,17 @@
             (eg. mscorlib or System.Runtime.dll) return true, even if they're really different,
             eg. mscorlib (.NET 2.0) vs mscorlib (Windows CE). If this flag is set, the system
             library is compared just like any other module/assembly.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.SigComparerOptions.DontProjectWinMDRefs">
+            <summary>
+            Don't project CLR compatible WinMD references back to the original CLR type/method before comparing
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.SigComparerOptions.DontCheckTypeEquivalence">
+            <summary>
+            Don't check type equivalence when comparing types. Starting with .NET 4.0, two different
+            types can be considered equivalent if eg. a TypeIdentifierAttribute is used.
             </summary>
         </member>
         <member name="T:dnlib.DotNet.SigComparer">
@@ -24655,6 +25431,36 @@
             <see cref="F:dnlib.DotNet.ElementType.FnPtr"/> is mapped to <see cref="T:System.IntPtr"/>, so use
             the same hash code for both
             </summary>
+        </member>
+        <member name="M:dnlib.DotNet.SigComparer.Equals(dnlib.DotNet.IMemberRef,dnlib.DotNet.IMemberRef)">
+            <summary>
+            Compare members
+            </summary>
+            <param name="a">Member #1</param>
+            <param name="b">Member #2</param>
+            <returns><c>true</c> if same, <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:dnlib.DotNet.SigComparer.GetHashCode(dnlib.DotNet.IMemberRef)">
+            <summary>
+            Gets the hash code of a member
+            </summary>
+            <param name="a">The member</param>
+            <returns>The hash code</returns>
+        </member>
+        <member name="M:dnlib.DotNet.SigComparer.Equals(dnlib.DotNet.ITypeDefOrRef,dnlib.DotNet.ITypeDefOrRef)">
+            <summary>
+            Compares types
+            </summary>
+            <param name="a">Type #1</param>
+            <param name="b">Type #2</param>
+            <returns><c>true</c> if same, <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:dnlib.DotNet.SigComparer.GetHashCode(dnlib.DotNet.ITypeDefOrRef)">
+            <summary>
+            Gets the hash code of a type
+            </summary>
+            <param name="a">The type</param>
+            <returns>The hash code</returns>
         </member>
         <member name="M:dnlib.DotNet.SigComparer.Equals(dnlib.DotNet.IType,dnlib.DotNet.IType)">
             <summary>
@@ -25650,114 +26456,29 @@
         <member name="M:dnlib.DotNet.SigComparer.ToString">
             <inheritdoc/>
         </member>
-        <member name="P:dnlib.DotNet.SigComparer.Options">
+        <member name="T:dnlib.DotNet.Resources.UserResourceType">
             <summary>
-            Gets/sets the options
+            User resource type
             </summary>
         </member>
-        <member name="P:dnlib.DotNet.SigComparer.DontCompareTypeScope">
+        <member name="M:dnlib.DotNet.Resources.UserResourceType.#ctor(System.String,dnlib.DotNet.Resources.ResourceTypeCode)">
             <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.DontCompareTypeScope"/> bit
+            Constructor
+            </summary>
+            <param name="name">Full name including assembly of type</param>
+            <param name="code">User type code</param>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.UserResourceType.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.UserResourceType.Name">
+            <summary>
+            Full name including assembly of type
             </summary>
         </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareMethodFieldDeclaringType">
+        <member name="P:dnlib.DotNet.Resources.UserResourceType.Code">
             <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareMethodFieldDeclaringType"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.ComparePropertyDeclaringType">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.ComparePropertyDeclaringType"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareEventDeclaringType">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareEventDeclaringType"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareSentinelParams">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareSentinelParams"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareAssemblyPublicKeyToken">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareAssemblyPublicKeyToken"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareAssemblyVersion">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareAssemblyVersion"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CompareAssemblyLocale">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CompareAssemblyLocale"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.TypeRefCanReferenceGlobalType">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.TypeRefCanReferenceGlobalType"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.DontCompareReturnType">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.DontCompareReturnType"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.SubstituteGenericParameters">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.SubstituteGenericParameters"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CaseInsensitiveTypeNamespaces">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CaseInsensitiveTypeNamespaces"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CaseInsensitiveTypeNames">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CaseInsensitiveTypeNames"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CaseInsensitiveMethodFieldNames">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CaseInsensitiveMethodFieldNames"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CaseInsensitivePropertyNames">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CaseInsensitivePropertyNames"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.CaseInsensitiveEventNames">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.CaseInsensitiveEventNames"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.PrivateScopeFieldIsComparable">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.PrivateScopeFieldIsComparable"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.PrivateScopeMethodIsComparable">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.PrivateScopeMethodIsComparable"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.RawSignatureCompare">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.RawSignatureCompare"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.IgnoreModifiers">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.IgnoreModifiers"/> bit
-            </summary>
-        </member>
-        <member name="P:dnlib.DotNet.SigComparer.MscorlibIsNotSpecial">
-            <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.SigComparerOptions.MscorlibIsNotSpecial"/> bit
+            User type code
             </summary>
         </member>
         <member name="T:dnlib.DotNet.ResourceType">
@@ -26162,6 +26883,14 @@
             </summary>
             <returns>A <see cref="T:dnlib.DotNet.MethodDef"/> instance</returns>
             <exception cref="T:dnlib.DotNet.MemberRefResolveException">If the method couldn't be resolved</exception>
+        </member>
+        <member name="M:dnlib.DotNet.MemberRef.GetSignatureGenericParamContext(dnlib.DotNet.GenericParamContext,dnlib.DotNet.IMemberRefParent)">
+            <summary>
+            Gets a <see cref="T:dnlib.DotNet.GenericParamContext"/> that can be used as signature context
+            </summary>
+            <param name="gpContext">Context passed to the constructor</param>
+            <param name="class">Field/method class owner</param>
+            <returns></returns>
         </member>
         <member name="M:dnlib.DotNet.MemberRef.ToString">
             <inheritdoc/>
@@ -26568,6 +27297,9 @@
             </summary>
             <param name="disposing"><c>true</c> if called by <see cref="M:dnlib.DotNet.MD.MetaData.Dispose"/></param>
         </member>
+        <member name="P:dnlib.DotNet.MD.MetaData.IsCompressed">
+            <inheritdoc/>
+        </member>
         <member name="P:dnlib.DotNet.MD.MetaData.ImageCor20Header">
             <inheritdoc/>
         </member>
@@ -26602,6 +27334,47 @@
             <inheritdoc/>
         </member>
         <member name="P:dnlib.DotNet.MD.MetaData.AllStreams">
+            <inheritdoc/>
+        </member>
+        <member name="T:dnlib.DotNet.MD.MetaData.SortedTable">
+            <summary>
+            Sorts a table by key column
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.MD.MetaData.SortedTable.#ctor(dnlib.DotNet.MD.MDTable,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mdTable">The MD table</param>
+            <param name="keyColIndex">Index of key column</param>
+        </member>
+        <member name="M:dnlib.DotNet.MD.MetaData.SortedTable.BinarySearch(System.UInt32)">
+            <summary>
+            Binary searches for a row with a certain key
+            </summary>
+            <param name="key">The key</param>
+            <returns>The row or 0 if not found</returns>
+        </member>
+        <member name="M:dnlib.DotNet.MD.MetaData.SortedTable.FindAllRows(System.UInt32)">
+            <summary>
+            Find all rids that contain <paramref name="key"/>
+            </summary>
+            <param name="key">The key</param>
+            <returns>A new <see cref="T:dnlib.DotNet.MD.RidList"/> instance</returns>
+        </member>
+        <member name="T:dnlib.DotNet.MD.MetaData.SortedTable.RowInfo">
+            <summary>
+            Remembers <c>rid</c> and key
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.MD.MetaData.SortedTable.RowInfo.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="rid">Row ID</param>
+            <param name="key">Key</param>
+        </member>
+        <member name="M:dnlib.DotNet.MD.MetaData.SortedTable.RowInfo.CompareTo(dnlib.DotNet.MD.MetaData.SortedTable.RowInfo)">
             <inheritdoc/>
         </member>
         <member name="T:dnlib.DotNet.MD.ENCMetaData">
@@ -26697,45 +27470,7 @@
         <member name="M:dnlib.DotNet.MD.ENCMetaData.FindAllRowsUnsorted(dnlib.DotNet.MD.MDTable,System.Int32,System.UInt32)">
             <inheritdoc/>
         </member>
-        <member name="T:dnlib.DotNet.MD.ENCMetaData.SortedTable">
-            <summary>
-            Sorts a table by key column
-            </summary>
-        </member>
-        <member name="M:dnlib.DotNet.MD.ENCMetaData.SortedTable.#ctor(dnlib.DotNet.MD.MDTable,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="mdTable">The MD table</param>
-            <param name="keyColIndex">Index of key column</param>
-        </member>
-        <member name="M:dnlib.DotNet.MD.ENCMetaData.SortedTable.BinarySearch(System.UInt32)">
-            <summary>
-            Binary searches for a row with a certain key
-            </summary>
-            <param name="key">The key</param>
-            <returns>The row or 0 if not found</returns>
-        </member>
-        <member name="M:dnlib.DotNet.MD.ENCMetaData.SortedTable.FindAllRows(System.UInt32)">
-            <summary>
-            Find all rids that contain <paramref name="key"/>
-            </summary>
-            <param name="key">The key</param>
-            <returns>A new <see cref="T:dnlib.DotNet.MD.RidList"/> instance</returns>
-        </member>
-        <member name="T:dnlib.DotNet.MD.ENCMetaData.SortedTable.RowInfo">
-            <summary>
-            Remembers <c>rid</c> and key
-            </summary>
-        </member>
-        <member name="M:dnlib.DotNet.MD.ENCMetaData.SortedTable.RowInfo.#ctor(System.UInt32,System.UInt32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="rid">Row ID</param>
-            <param name="key">Key</param>
-        </member>
-        <member name="M:dnlib.DotNet.MD.ENCMetaData.SortedTable.RowInfo.CompareTo(dnlib.DotNet.MD.ENCMetaData.SortedTable.RowInfo)">
+        <member name="P:dnlib.DotNet.MD.ENCMetaData.IsCompressed">
             <inheritdoc/>
         </member>
         <member name="T:dnlib.DotNet.IMethodDecrypter">
@@ -26984,6 +27719,30 @@
             </summary>
             <param name="methodSig">Method sig</param>
             <returns>Method sig full name</returns>
+        </member>
+        <member name="M:dnlib.DotNet.FullNameCreator.PropertySigFullName(dnlib.DotNet.PropertySig)">
+            <summary>
+            Returns the full name of a property sig
+            </summary>
+            <param name="propertySig">Property sig</param>
+            <returns>Property sig full name</returns>
+        </member>
+        <member name="M:dnlib.DotNet.FullNameCreator.MethodBaseSigFullName(dnlib.DotNet.MethodBaseSig)">
+            <summary>
+            Returns the full name of a property sig
+            </summary>
+            <param name="sig">Property sig</param>
+            <returns>Property sig full name</returns>
+        </member>
+        <member name="M:dnlib.DotNet.FullNameCreator.MethodBaseSigFullName(System.String,System.String,dnlib.DotNet.MethodBaseSig,dnlib.DotNet.MethodDef)">
+            <summary>
+            Returns the full name of a sig
+            </summary>
+            <param name="declType">Declaring type or null</param>
+            <param name="name">Name or null</param>
+            <param name="sig">Method sig</param>
+            <param name="gppMethod">Owner method or null</param>
+            <returns>Sig full name</returns>
         </member>
         <member name="M:dnlib.DotNet.FullNameCreator.Namespace(dnlib.DotNet.TypeRef,System.Boolean)">
             <summary>
@@ -27431,6 +28190,9 @@
         <member name="M:dnlib.DotNet.FieldDef.GetMarshalType_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.FieldDef.marshalType"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.FieldDef.ResetMarshalType">
+            <summary>Reset <see cref="P:dnlib.DotNet.FieldDef.MarshalType"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.FieldDef.rva">
             <summary/>
         </member>
@@ -27440,6 +28202,9 @@
         <member name="M:dnlib.DotNet.FieldDef.GetRVA_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.FieldDef.rva"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.FieldDef.ResetRVA">
+            <summary>Reset <see cref="P:dnlib.DotNet.FieldDef.RVA"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.FieldDef.initialValue">
             <summary/>
         </member>
@@ -27448,6 +28213,9 @@
         </member>
         <member name="M:dnlib.DotNet.FieldDef.GetInitialValue_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.FieldDef.initialValue"/></summary>
+        </member>
+        <member name="M:dnlib.DotNet.FieldDef.ResetInitialValue">
+            <summary>Reset <see cref="P:dnlib.DotNet.FieldDef.InitialValue"/></summary>
         </member>
         <member name="F:dnlib.DotNet.FieldDef.implMap">
             <summary/>
@@ -27466,6 +28234,9 @@
         </member>
         <member name="M:dnlib.DotNet.FieldDef.GetConstant_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.FieldDef.constant"/></summary>
+        </member>
+        <member name="M:dnlib.DotNet.FieldDef.ResetConstant">
+            <summary>Reset <see cref="P:dnlib.DotNet.FieldDef.Constant"/></summary>
         </member>
         <member name="F:dnlib.DotNet.FieldDef.declaringType2">
             <summary/>
@@ -27504,6 +28275,16 @@
             </summary>
             <param name="declaringType">The declaring type of <c>this</c></param>
             <param name="fieldSig">The field signature of <c>this</c></param>
+            <param name="size">Updated with size</param>
+            <returns><c>true</c> if <paramref name="size"/> is valid, <c>false</c> otherwise</returns>
+        </member>
+        <member name="M:dnlib.DotNet.FieldDef.GetFieldSize(dnlib.DotNet.TypeDef,dnlib.DotNet.FieldSig,System.Int32,System.UInt32@)">
+            <summary>
+            Gets the size of this field in bytes or <c>0</c> if unknown.
+            </summary>
+            <param name="declaringType">The declaring type of <c>this</c></param>
+            <param name="fieldSig">The field signature of <c>this</c></param>
+            <param name="ptrSize">Size of a pointer</param>
             <param name="size">Updated with size</param>
             <returns><c>true</c> if <paramref name="size"/> is valid, <c>false</c> otherwise</returns>
         </member>
@@ -27830,6 +28611,12 @@
             </summary>
             <returns>Blob data or <c>null</c></returns>
         </member>
+        <member name="M:dnlib.DotNet.DeclSecurity.GetNet1xXmlString">
+            <summary>
+            Returns the .NET 1.x XML string or null if it's not a .NET 1.x format
+            </summary>
+            <returns></returns>
+        </member>
         <member name="P:dnlib.DotNet.DeclSecurity.MDToken">
             <inheritdoc/>
         </member>
@@ -28030,6 +28817,80 @@
             <summary>
             Gets the resource reader
             </summary>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.TypeDef)">
+            <summary>
+            Converts WinMD type <paramref name="td"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="td">Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.TypeDef,System.Boolean@)">
+            <summary>
+            Converts WinMD type <paramref name="td"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="td">Type</param>
+            <param name="isClrValueType"><c>true</c> if the returned type is a value type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.TypeRef)">
+            <summary>
+            Converts WinMD type <paramref name="tr"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="tr">Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.TypeRef,System.Boolean@)">
+            <summary>
+            Converts WinMD type <paramref name="tr"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="tr">Type</param>
+            <param name="isClrValueType"><c>true</c> if the returned type is a value type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.ExportedType)">
+            <summary>
+            Converts WinMD type <paramref name="et"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="et">Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.TypeSig)">
+            <summary>
+            Converts WinMD type <paramref name="ts"/> to a CLR type. Returns <c>null</c>
+            if it's not a CLR compatible WinMD type.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="ts">Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.MemberRef)">
+            <summary>
+            Converts WinMD member reference <paramref name="mr"/> to a CLR member reference. Returns
+            <c>null</c> if it's not a CLR compatible WinMD member reference.
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="mr">Member reference</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.WinMDHelpers.ToCLR(dnlib.DotNet.ModuleDef,dnlib.DotNet.MethodDef)">
+            <summary>
+            Converts WinMD method <paramref name="md"/> to a CLR member reference. Returns
+            <c>null</c> if it's not a CLR compatible WinMD method
+            </summary>
+            <param name="module">Owner module or <c>null</c></param>
+            <param name="md">Method</param>
+            <returns></returns>
         </member>
         <member name="T:dnlib.DotNet.VTableFixups">
             <summary>
@@ -28305,6 +29166,11 @@
         <member name="P:dnlib.DotNet.MD.MetaDataHeader.VersionString">
             <summary>
             Returns the version string
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.MD.MetaDataHeader.StorageHeaderOffset">
+            <summary>
+            Returns the offset of <c>STORAGEHEADER</c>
             </summary>
         </member>
         <member name="P:dnlib.DotNet.MD.MetaDataHeader.Flags">
@@ -29086,6 +29952,13 @@
             </summary>
             <returns>A new stream</returns>
         </member>
+        <member name="M:dnlib.PE.IPEImage.UnsafeDisableMemoryMappedIO">
+            <summary>
+            Call this to disable memory mapped I/O if it was used to open the file. This must only
+            be called if no other code is trying to access the memory since that could lead to an
+            exception.
+            </summary>
+        </member>
         <member name="P:dnlib.PE.IPEImage.IsFileImageLayout">
             <summary>
             <c>true</c> if image layout is the same as the raw PE image layout, <c>false</c>
@@ -29121,6 +29994,11 @@
         <member name="P:dnlib.PE.IPEImage.Win32Resources">
             <summary>
             Gets/sets the Win32 resources. This is <c>null</c> if there are no Win32 resources.
+            </summary>
+        </member>
+        <member name="P:dnlib.PE.IPEImage.IsMemoryMappedIO">
+            <summary>
+            <c>true</c> if memory mapped I/O is enabled
             </summary>
         </member>
         <member name="T:dnlib.DotNet.Writer.TablesHeapOptions">
@@ -29312,6 +30190,315 @@
         <member name="P:dnlib.DotNet.Writer.DebugDirectory.RVA">
             <inheritdoc/>
         </member>
+        <member name="T:dnlib.DotNet.TIAHelper">
+            <summary>
+            <c>System.Runtime.InteropServices.TypeIdentifierAttribute</c> helper code used by <see cref="T:dnlib.DotNet.SigComparer"/>
+            </summary>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceTypeCode">
+            <summary>
+            Type of resource
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Null">
+            <summary>
+            null
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.String">
+            <summary>
+            <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Boolean">
+            <summary>
+            <see cref="T:System.Boolean"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Char">
+            <summary>
+            <see cref="T:System.Char"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Byte">
+            <summary>
+            <see cref="T:System.Byte"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.SByte">
+            <summary>
+            <see cref="T:System.SByte"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Int16">
+            <summary>
+            <see cref="T:System.Int16"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.UInt16">
+            <summary>
+            <see cref="T:System.UInt16"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Int32">
+            <summary>
+            <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.UInt32">
+            <summary>
+            <see cref="T:System.UInt32"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Int64">
+            <summary>
+            <see cref="T:System.Int64"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.UInt64">
+            <summary>
+            <see cref="T:System.UInt64"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Single">
+            <summary>
+            <see cref="T:System.Single"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Double">
+            <summary>
+            <see cref="T:System.Double"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Decimal">
+            <summary>
+            <see cref="T:System.Decimal"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.DateTime">
+            <summary>
+            <see cref="F:dnlib.DotNet.Resources.ResourceTypeCode.DateTime"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.TimeSpan">
+            <summary>
+            <see cref="F:dnlib.DotNet.Resources.ResourceTypeCode.TimeSpan"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.ByteArray">
+            <summary>
+            <see cref="T:System.Byte"/> array
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.Stream">
+            <summary>
+            <see cref="F:dnlib.DotNet.Resources.ResourceTypeCode.Stream"/>
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.Resources.ResourceTypeCode.UserTypes">
+            <summary>
+            Start of user types
+            </summary>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.ResourceDataCreator">
+            <summary>
+            Creates resource data
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.#ctor(dnlib.DotNet.ModuleDef)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="module">Owner module</param>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateNull">
+            <summary>
+            Create null data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.String)">
+            <summary>
+            Creates <see cref="T:System.String"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Boolean)">
+            <summary>
+            Creates <see cref="T:System.Boolean"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Char)">
+            <summary>
+            Creates <see cref="T:System.Char"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Byte)">
+            <summary>
+            Creates <see cref="T:System.Byte"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.SByte)">
+            <summary>
+            Creates <see cref="T:System.SByte"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Int16)">
+            <summary>
+            Creates <see cref="T:System.Int16"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.UInt16)">
+            <summary>
+            Creates <see cref="T:System.UInt16"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Int32)">
+            <summary>
+            Creates <see cref="T:System.Int32"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.UInt32)">
+            <summary>
+            Creates <see cref="T:System.UInt32"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Int64)">
+            <summary>
+            Creates <see cref="T:System.Int64"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.UInt64)">
+            <summary>
+            Creates <see cref="T:System.UInt64"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Single)">
+            <summary>
+            Creates <see cref="T:System.Single"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Double)">
+            <summary>
+            Creates <see cref="T:System.Double"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Decimal)">
+            <summary>
+            Creates <see cref="T:System.Decimal"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.DateTime)">
+            <summary>
+            Creates <see cref="T:System.DateTime"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.TimeSpan)">
+            <summary>
+            Creates <see cref="T:System.TimeSpan"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.Create(System.Byte[])">
+            <summary>
+            Creates <see cref="T:System.Byte"/> array data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateStream(System.Byte[])">
+            <summary>
+            Creates <see cref="T:System.IO.Stream"/> data
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateSerialized(System.Byte[],dnlib.DotNet.Resources.UserResourceType)">
+            <summary>
+            Creates serialized data
+            </summary>
+            <param name="value">Serialized data</param>
+            <param name="type">Type of serialized data</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateSerialized(System.Byte[])">
+            <summary>
+            Creates serialized data
+            </summary>
+            <param name="value">Serialized data</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateUserResourceType(System.String)">
+            <summary>
+            Creates a user type. If the type already exists, the existing value is returned.
+            </summary>
+            <param name="fullName">Full name of type</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.CreateUserResourceType(System.String,System.Boolean)">
+            <summary>
+            Creates a user type. If the type already exists, the existing value is returned.
+            </summary>
+            <param name="fullName">Full name of type</param>
+            <param name="useFullName">Use <paramref name="fullName"/> without converting it to a
+            type in an existing assembly reference</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.GetAssemblyFullName(System.String)">
+            <summary>
+            Converts an assembly simple name (eg. mscorlib) to the full name of the assembly,
+            which includes the version, public key token, etc. Returns <c>null</c> if it's
+            unknown.
+            </summary>
+            <param name="simpleName">Simple name of assembly</param>
+            <returns></returns>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.ResourceDataCreator.GetSortedTypes">
+            <summary>
+            Gets all types sorted by <see cref="T:dnlib.DotNet.Resources.UserResourceType"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceDataCreator.Module">
+            <summary>
+            Gets the owner module
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.ResourceDataCreator.Count">
+            <summary>
+            Gets number of user data types
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.Pdb.Dss.MDEmitter">
             <summary>
             Pass this instance to <see cref="M:dnlib.DotNet.Pdb.Dss.ISymUnmanagedWriter.Initialize(System.IntPtr,System.String,System.Runtime.InteropServices.ComTypes.IStream,System.Boolean)"/> when writing the PDB file
@@ -29421,6 +30608,84 @@
         </member>
         <member name="M:dnlib.DotNet.NullResolver.Resolve(dnlib.DotNet.MemberRef)">
             <inheritdoc/>
+        </member>
+        <member name="T:dnlib.DotNet.MemberFinder">
+            <summary>
+            Finds types, fields, methods, etc in a module. If nothing has been added to the module, it's
+            faster to call ResolveMethodDef(), ResolveTypeRef() etc.
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.CustomAttributes">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.CustomAttribute"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.EventDefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.EventDef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.FieldDefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.FieldDef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.GenericParams">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.GenericParam"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.MemberRefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.MemberRef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.MethodDefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.MethodDef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.MethodSpecs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.MethodSpec"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.PropertyDefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.PropertyDef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.TypeDefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.TypeDef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.TypeRefs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.TypeRef"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.TypeSigs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.TypeSig"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.TypeSpecs">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.TypeSpec"/>s
+            </summary>
+        </member>
+        <member name="F:dnlib.DotNet.MemberFinder.ExportedTypes">
+            <summary>
+            All found <see cref="T:dnlib.DotNet.ExportedType"/>s
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.MemberFinder.FindAll(dnlib.DotNet.ModuleDef)">
+            <summary>
+            Finds all types, fields, etc
+            </summary>
+            <param name="module">The module to scan</param>
+            <returns>Itself</returns>
         </member>
         <member name="T:dnlib.DotNet.MD.MDStreamFlags">
             <summary>
@@ -29691,6 +30956,16 @@
             <param name="index">Index</param>
             <param name="gpContext">Generic parameter context</param>
             <returns>The element or <c>null</c> if <paramref name="index"/> is invalid</returns>
+        </member>
+        <member name="T:dnlib.Threading.ICancellationToken">
+            <summary>
+            Cancellation token interface
+            </summary>
+        </member>
+        <member name="M:dnlib.Threading.ICancellationToken.ThrowIfCancellationRequested">
+            <summary>
+            Throws a <see cref="T:System.OperationCanceledException"/> if the operation should be canceled
+            </summary>
         </member>
         <member name="T:dnlib.Settings">
             <summary>
@@ -30447,6 +31722,17 @@
         <member name="P:dnlib.DotNet.AssemblyRefMD.OrigRid">
             <inheritdoc/>
         </member>
+        <member name="T:dnlib.Utils.MFunc`3">
+            <summary>
+            Same as Func delegate
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="t"></param>
+            <param name="u"></param>
+            <returns></returns>
+        </member>
         <member name="T:dnlib.Utils.Extensions">
             <summary>
             Extension methods
@@ -30592,6 +31878,9 @@
         <member name="M:dnlib.PE.PEImage.CreateFullStream">
             <inheritdoc/>
         </member>
+        <member name="M:dnlib.PE.PEImage.UnsafeDisableMemoryMappedIO">
+            <inheritdoc/>
+        </member>
         <member name="P:dnlib.PE.PEImage.IsFileImageLayout">
             <inheritdoc/>
         </member>
@@ -30611,6 +31900,9 @@
             <inheritdoc/>
         </member>
         <member name="P:dnlib.PE.PEImage.Win32Resources">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.PE.PEImage.IsMemoryMappedIO">
             <inheritdoc/>
         </member>
         <member name="M:dnlib.PE.PEImage.FilePEType.ToRVA(dnlib.PE.PEInfo,dnlib.IO.FileOffset)">
@@ -31533,6 +32825,9 @@
         <member name="M:dnlib.DotNet.TypeDef.GetBaseType_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.TypeDef.baseType"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.TypeDef.ResetBaseType">
+            <summary>Reset <see cref="P:dnlib.DotNet.TypeDef.BaseType"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.TypeDef.fields">
             <summary/>
         </member>
@@ -32063,6 +33358,13 @@
             <param name="name">Field name</param>
             <returns>The field or <c>null</c> if none found</returns>
         </member>
+        <member name="M:dnlib.DotNet.TypeDef.FindMethodImplMethod(dnlib.DotNet.IMethodDefOrRef)">
+            <summary>
+            FInd a method implementation method
+            </summary>
+            <param name="mdr">Method</param>
+            <returns></returns>
+        </member>
         <member name="M:dnlib.DotNet.TypeDef.ToString">
             <inheritdoc/>
         </member>
@@ -32281,6 +33583,11 @@
         <member name="P:dnlib.DotNet.TypeDef.IsEnum">
             <summary>
             <c>true</c> if it's an enum
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.TypeDef.IsDelegate">
+            <summary>
+            <c>true</c> if it's a delegate (it derives from <see cref="T:System.MulticastDelegate"/>)
             </summary>
         </member>
         <member name="P:dnlib.DotNet.TypeDef.IsNested">
@@ -32651,6 +33958,59 @@
         <member name="F:dnlib.DotNet.SerializationType.Enum">
             <summary>An enum</summary>
         </member>
+        <member name="T:dnlib.DotNet.Resources.UserResourceData">
+            <summary>
+            Base class of all user data
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.UserResourceData.#ctor(dnlib.DotNet.Resources.UserResourceType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">User resource type</param>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.UserResourceData.WriteData(System.IO.BinaryWriter,System.Runtime.Serialization.IFormatter)">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.UserResourceData.TypeName">
+            <summary>
+            Full name including assembly of type
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.UserResourceData.Code">
+            <summary>
+            User type code
+            </summary>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.UserResourceData.StartOffset">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.UserResourceData.EndOffset">
+            <inheritdoc/>
+        </member>
+        <member name="T:dnlib.DotNet.Resources.BinaryResourceData">
+            <summary>
+            Binary data
+            </summary>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BinaryResourceData.#ctor(dnlib.DotNet.Resources.UserResourceType,System.Byte[])">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">User resource type</param>
+            <param name="data">Raw serialized data</param>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BinaryResourceData.WriteData(System.IO.BinaryWriter,System.Runtime.Serialization.IFormatter)">
+            <inheritdoc/>
+        </member>
+        <member name="M:dnlib.DotNet.Resources.BinaryResourceData.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="P:dnlib.DotNet.Resources.BinaryResourceData.Data">
+            <summary>
+            Gets the raw data
+            </summary>
+        </member>
         <member name="T:dnlib.DotNet.ResourceCollection">
             <summary>
             A collection of <see cref="T:dnlib.DotNet.Resource"/>s
@@ -32830,6 +34190,9 @@
         <member name="M:dnlib.DotNet.ParamDef.GetMarshalType_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.ParamDef.marshalType"/></summary>
         </member>
+        <member name="M:dnlib.DotNet.ParamDef.ResetMarshalType">
+            <summary>Reset <see cref="P:dnlib.DotNet.ParamDef.MarshalType"/></summary>
+        </member>
         <member name="F:dnlib.DotNet.ParamDef.constant">
             <summary/>
         </member>
@@ -32838,6 +34201,9 @@
         </member>
         <member name="M:dnlib.DotNet.ParamDef.GetConstant_NoLock">
             <summary>Called to initialize <see cref="F:dnlib.DotNet.ParamDef.constant"/></summary>
+        </member>
+        <member name="M:dnlib.DotNet.ParamDef.ResetConstant">
+            <summary>Reset <see cref="P:dnlib.DotNet.ParamDef.Constant"/></summary>
         </member>
         <member name="F:dnlib.DotNet.ParamDef.customAttributes">
             <summary/>
@@ -34151,6 +35517,13 @@
             <param name="type">Argument type</param>
             <param name="value">Argument value</param>
         </member>
+        <member name="M:dnlib.DotNet.CAArgument.Clone">
+            <summary>
+            Clones this instance and any <see cref="T:dnlib.DotNet.CAArgument"/>s and <see cref="T:dnlib.DotNet.CANamedArgument"/>s
+            referenced from this instance.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:dnlib.DotNet.CAArgument.ToString">
             <inheritdoc/>
         </member>
@@ -34203,6 +35576,12 @@
             <param name="type">Field/property type</param>
             <param name="name">Name of field/property</param>
             <param name="argument">Field/property argument</param>
+        </member>
+        <member name="M:dnlib.DotNet.CANamedArgument.Clone">
+            <summary>
+            Clones this instance and any <see cref="T:dnlib.DotNet.CAArgument"/>s referenced from this instance.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:dnlib.DotNet.CANamedArgument.ToString">
             <inheritdoc/>
@@ -34409,6 +35788,17 @@
         </member>
         <member name="M:dnlib.IO.MemoryMappedFileStreamCreator.Dispose(System.Boolean)">
             <inheritdoc/>
+        </member>
+        <member name="M:dnlib.IO.MemoryMappedFileStreamCreator.UnsafeDisableMemoryMappedIO">
+            <summary>
+            Call this to disable memory mapped I/O. This must only be called if no other code is
+            trying to access the memory since that could lead to an exception.
+            </summary>
+        </member>
+        <member name="P:dnlib.IO.MemoryMappedFileStreamCreator.IsMemoryMappedIO">
+            <summary>
+            <c>true</c> if memory mapped I/O is enabled
+            </summary>
         </member>
         <member name="T:dnlib.DotNet.Writer.MethodBodyChunks">
             <summary>
@@ -34993,7 +36383,7 @@
             <param name="ownerModule">Module that will own the returned <see cref="T:dnlib.DotNet.IType"/> or <c>null</c></param>
             <param name="typeFullName">Full name of type</param>
             <param name="typeNameParserHelper">Helper class</param>
-            <param name="gpContext">Generic parameter context</param>/// 
+            <param name="gpContext">Generic parameter context</param>
         </member>
         <member name="M:dnlib.DotNet.TypeNameParser.Parse">
             <summary>
@@ -35291,6 +36681,9 @@
         <member name="M:dnlib.DotNet.MD.CompressedMetaData.BinarySearch_NoLock(dnlib.DotNet.MD.MDTable,System.Int32,System.UInt32)">
             <inheritdoc/>
         </member>
+        <member name="P:dnlib.DotNet.MD.CompressedMetaData.IsCompressed">
+            <inheritdoc/>
+        </member>
         <member name="T:dnlib.DotNet.GenericParamContext">
             <summary>
             Generic parameter context
@@ -35344,6 +36737,11 @@
             </summary>
             <param name="type">Type context</param>
             <param name="method">Method context</param>
+        </member>
+        <member name="P:dnlib.DotNet.GenericParamContext.IsEmpty">
+            <summary>
+            true if <see cref="F:dnlib.DotNet.GenericParamContext.Type"/> and <see cref="F:dnlib.DotNet.GenericParamContext.Method"/> are both <c>null</c>
+            </summary>
         </member>
         <member name="T:dnlib.DotNet.GenericParam">
             <summary>
@@ -35516,7 +36914,7 @@
         </member>
         <member name="P:dnlib.DotNet.GenericParam.HasNoSpecialConstraint">
             <summary>
-            Gets/sets the <see cref="F:dnlib.DotNet.GenericParamAttributes.NoSpecialConstraint"/> bit
+            <c>true</c> if there are no special constraints
             </summary>
         </member>
         <member name="P:dnlib.DotNet.GenericParam.HasReferenceTypeConstraint">
@@ -35718,6 +37116,15 @@
             <param name="gpContext">Generic parameter context</param>
             <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance</returns>
         </member>
+        <member name="M:dnlib.DotNet.CustomAttributeReader.Read(dnlib.DotNet.ModuleDef,System.Byte[],dnlib.DotNet.ICustomAttributeType)">
+            <summary>
+            Reads a custom attribute
+            </summary>
+            <param name="module">Owner module</param>
+            <param name="caBlob">CA blob</param>
+            <param name="ctor">Custom attribute constructor</param>
+            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance</returns>
+        </member>
         <member name="M:dnlib.DotNet.CustomAttributeReader.Read(dnlib.DotNet.ModuleDef,dnlib.IO.IBinaryReader,dnlib.DotNet.ICustomAttributeType)">
             <summary>
             Reads a custom attribute
@@ -35725,8 +37132,17 @@
             <param name="module">Owner module</param>
             <param name="stream">A stream positioned at the the first byte of the CA blob</param>
             <param name="ctor">Custom attribute constructor</param>
-            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance or <c>null</c> if one of the
-            args is <c>null</c> or if we failed to parse the CA blob</returns>
+            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance</returns>
+        </member>
+        <member name="M:dnlib.DotNet.CustomAttributeReader.Read(dnlib.DotNet.ModuleDef,System.Byte[],dnlib.DotNet.ICustomAttributeType,dnlib.DotNet.GenericParamContext)">
+            <summary>
+            Reads a custom attribute
+            </summary>
+            <param name="module">Owner module</param>
+            <param name="caBlob">CA blob</param>
+            <param name="ctor">Custom attribute constructor</param>
+            <param name="gpContext">Generic parameter context</param>
+            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance</returns>
         </member>
         <member name="M:dnlib.DotNet.CustomAttributeReader.Read(dnlib.DotNet.ModuleDef,dnlib.IO.IBinaryReader,dnlib.DotNet.ICustomAttributeType,dnlib.DotNet.GenericParamContext)">
             <summary>
@@ -35736,8 +37152,7 @@
             <param name="stream">A stream positioned at the the first byte of the CA blob</param>
             <param name="ctor">Custom attribute constructor</param>
             <param name="gpContext">Generic parameter context</param>
-            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance or <c>null</c> if one of the
-            args is <c>null</c> or if we failed to parse the CA blob</returns>
+            <returns>A new <see cref="T:dnlib.DotNet.CustomAttribute"/> instance</returns>
         </member>
         <member name="M:dnlib.DotNet.CustomAttributeReader.ReadNamedArguments(dnlib.DotNet.ModuleDef,dnlib.IO.IBinaryReader,System.Int32,dnlib.DotNet.GenericParamContext)">
             <summary>
@@ -36384,6 +37799,9 @@
             <summary>
             Clone this
             </summary>
+        </member>
+        <member name="M:dnlib.DotNet.PropertySig.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:dnlib.DotNet.LocalSig">
             <summary>

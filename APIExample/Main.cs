@@ -104,12 +104,15 @@ namespace FederalCallouts
             Settings.EnableKidnapping = ini.ReadBoolean("Kidnapping", "Enable", true);
             Settings.Prob_Kidn = ini.ReadInt32("Kidnapping", "Probability", 2);
 
-            Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
+            //Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
+            Settings.EnableBombSting = false;
             Settings.Prob_BS = ini.ReadInt32("BombSting", "Probability", 2);
 
-            Settings.EnableORC = ini.ReadBoolean("OrganizedRetailCrime", "Enable", true);
+            //Settings.EnableORC = ini.ReadBoolean("OrganizedRetailCrime", "Enable", true);
+            Settings.EnableORC = false;
 
             Settings.EnableStingray = ini.ReadBoolean("Stingray", "Enable", true);
+            Settings.EnableStingray = false;
             Settings.Prob_Stingray = ini.ReadInt32("Stingray", "Probability", 2);
             Game.LogTrivial("[FC] Loading spawn positions");
 
