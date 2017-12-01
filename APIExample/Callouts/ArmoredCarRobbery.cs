@@ -113,7 +113,7 @@ namespace FederalCallouts.Callouts
             securicar.IsPersistent = true;
 
 
-            this.CalloutMessage = "Armored car robbery in progress";
+            this.CalloutMessage = "Armored car robbery";
             Functions.PlayScannerAudioUsingPosition("WE_HAVE CRIME_ARMORED_CAR_ROBBERY IN_OR_ON_POSITION", securicar.Position);
             this.CalloutPosition = SpawnPoint;
 
