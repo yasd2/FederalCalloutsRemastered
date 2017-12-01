@@ -155,7 +155,7 @@ namespace FederalCallouts.Callouts
                         Dispatch.PlayerSay("suspect is dead");
                         GameFiber.Wait(2000);
                         Functions.PlayScannerAudio("REPORT_RESPONSE_COPY SUSPECT_DOWN");
-                        Dispatch.Copy("suspect is dead");
+                        Dispatch.Copy("Suspect is dead");
                     }));
                 if (Functions.IsPedArrested(suspect))
                     GameFiber.StartNew((() =>
@@ -163,7 +163,7 @@ namespace FederalCallouts.Callouts
                         Dispatch.PlayerSay("Dispatch, suspect is in custody");
                         GameFiber.Wait(2000);
                         Functions.PlayScannerAudio("REPORT_RESPONSE_COPY SUSPECT_ARRESTED");
-                        Dispatch.Copy("suspect is in custody");
+                        Dispatch.Copy("Suspect is in custody");
                     }));
                 End();
             }
