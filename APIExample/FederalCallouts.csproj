@@ -69,6 +69,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Squad.cs" />
     <Compile Include="Tools\CharacterManager.cs" />
+    <Compile Include="Tools\ConfigEUP.cs" />
     <Compile Include="Tools\ExtendedSpawnPoint.cs" />
     <Compile Include="Tools\FederalBackup.cs" />
     <Compile Include="Tools\PreviewVehicle.cs" />

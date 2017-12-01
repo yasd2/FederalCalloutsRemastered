@@ -20,7 +20,13 @@ public static class Vector3Extension
     {
         return v3 = v3 + new Vector3(MathHelper.GetRandomSingle(-radius, radius), MathHelper.GetRandomSingle(-radius, radius), 0.0f);
     }
-
+    public static bool IsInFront(this Entity self, Vector3 OtherVector)
+    {
+        Vector3 normalizedAngle = MathHelper.ConvertHeadingToDirection(self.Heading);
+        float x = normalizedAngle.X;
+        float y = normalizedAngle.Y;
+        return false;
+    }
     public static Vector3 RandomXY()
     {
         Random random = new Random(Environment.TickCount);

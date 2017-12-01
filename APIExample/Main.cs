@@ -11,11 +11,9 @@ using FederalCallouts.Callouts;
 using FederalCallouts.Tools;
 using System.Windows.Forms;
 
-/*
- *CREDITS:
- *Stealth22 - helping protect my code :)
- *Nicknamee - testing
- */
+//prop_fib_badge
+//animation: fbi_5b_mcs_1-0
+//antimation: prop_fib_badge-0
 namespace FederalCallouts
 {
     using LSPD_First_Response.Mod.API;
@@ -92,16 +90,16 @@ namespace FederalCallouts
             Settings.Prob_ACR = ini.ReadInt32("ArmoredCarRobbery", "Probability", 2);
 
             Settings.EnablePotentialDrugDeal = ini.ReadBoolean("PotentialDrugDeal", "Enable", true);
-            Settings.Prob_PDD = ini.ReadInt32("PotentialDrugDeal", "Probability", 4);
+            Settings.Prob_PDD = ini.ReadInt32("PotentialDrugDeal", "Probability", 3);
 
             Settings.EnableExecuteArrestWarrant = ini.ReadBoolean("ExecuteArrestWarrant", "Enable", true);
-            Settings.Prob_SAW = ini.ReadInt32("ExecuteArrestWarrant", "Probability", 5);
+            Settings.Prob_SAW = ini.ReadInt32("ExecuteArrestWarrant", "Probability", 3);
 
             Settings.EnableAssassination = ini.ReadBoolean("Assassination", "Enable", true);
-            Settings.Prob_Ass = ini.ReadInt32("Assassination", "Probability", 4);
+            Settings.Prob_Ass = ini.ReadInt32("Assassination", "Probability", 2);
 
             Settings.EnablePrisonerEscaped = ini.ReadBoolean("PrisonerEscaped", "Enable", true);
-            Settings.Prob_PE = ini.ReadInt32("PrisonerEscaped", "Probability", 3);
+            Settings.Prob_PE = ini.ReadInt32("PrisonerEscaped", "Probability", 2);
 
             Settings.EnableKidnapping = ini.ReadBoolean("Kidnapping", "Enable", true);
             Settings.Prob_Kidn = ini.ReadInt32("Kidnapping", "Probability", 2);
@@ -112,7 +110,7 @@ namespace FederalCallouts
             Settings.EnableORC = ini.ReadBoolean("OrganizedRetailCrime", "Enable", true);
 
             Settings.EnableStingray = ini.ReadBoolean("Stingray", "Enable", true);
-            Settings.Prob_Stingray = ini.ReadInt32("Stingray", "Probability", 4);
+            Settings.Prob_Stingray = ini.ReadInt32("Stingray", "Probability", 2);
             Game.LogTrivial("[FC] Loading spawn positions");
 
             //Callout specific settings
@@ -332,6 +330,6 @@ namespace FederalCallouts
 /*
             GameFiber.StartNew((() =>
             {
-            }));
+            }), "Unnamed FC Fiber");
 
 */
