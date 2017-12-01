@@ -40,7 +40,8 @@ namespace FederalCallouts.Callouts
                                        "WEAPON_PISTOL50",
                                        "WEAPON_MICROSMG",
                                        "WEAPON_SAWNOFFSHOTGUN",
-                                       "WEAPON_STUNGUN"
+                                       "WEAPON_STUNGUN",
+                                       "WEAPON_CARBINERIFLE"
                                    };
         private StreetArrestState state = StreetArrestState.EnRoute;
 
@@ -177,6 +178,7 @@ namespace FederalCallouts.Callouts
         {
             if (suspect.Exists()) { suspect.Dismiss(); }
             if (suspectBlip.Exists()) { suspectBlip.Delete(); }
+            indicator.Remove();
             base.End();
         }
 

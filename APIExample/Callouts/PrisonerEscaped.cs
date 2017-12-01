@@ -242,6 +242,7 @@ namespace FederalCallouts.Callouts
             if (fugitive.Exists()) { fugitive.Dismiss(); }
             if (fugitiveBlip.Exists()) { fugitiveBlip.Delete(); }
             if (fugitiveSearchBlip.Exists()) { fugitiveSearchBlip.Delete(); }
+            indicator.Remove();
             base.End();
         }
 

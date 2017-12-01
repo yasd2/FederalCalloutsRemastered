@@ -1,6 +1,7 @@
 ﻿using LSPD_First_Response.Mod.API;
 using LSPD_First_Response.Mod.Callouts;
 using Rage;
+using Rage.Native;
 using System;
 using System.Threading;
 
@@ -14,7 +15,8 @@ namespace FederalCallouts.Callouts
     
     class Kidnapping : Callout
     {
-        
+
+
         private Ped suspect;
         private Ped victim = null;
         private Vehicle currentVehicle;
