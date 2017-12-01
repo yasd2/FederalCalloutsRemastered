@@ -25,6 +25,7 @@ namespace FederalCallouts.UI
             target = ped;
             pool = new TimerBarPool();
             indicator = new BarTimerBar("Target Awareness");
+            
             indicator.Percentage = 0F;
             pool.Add(indicator);
             //Establishing base awareness values
@@ -37,6 +38,18 @@ namespace FederalCallouts.UI
             else if (player.DistanceTo(target) < 100F)
                 awareness = 0;
         }
+        public void Remove()
+        {
+            try
+            {
+                pool.Remove(indicator);
+            }
+            catch
+            {
+
+            }
+            shouldDraw = false;
+        }
         public void Think()
         {
             int scale = 0;
@@ -45,7 +58,7 @@ namespace FederalCallouts.UI
                 scale = 3;
             else if (player.DistanceTo(target) <= 60F | (player.DistanceTo(target) < 75F && player.IsUniformed() && !player.IsInCover))
                 scale = 2;
-            else if (player.DistanceTo(target) >= 60F && player.DistanceTo(target) < 110F)
+            else if (player.DistanceTo(target) >= 60F && player.DistanceTo(target) < 70F)
                 scale = 1;
             else if (player.DistanceTo(target) < 120F | player.IsInCover)
                 scale = 0;
