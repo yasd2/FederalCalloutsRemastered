@@ -11,6 +11,7 @@ using System.Linq;
 using FederalCallouts.UI;
 namespace FederalCallouts.Callouts
 {
+    //TODO: make peds wanted
 #if DEBUG
     [CalloutInfo("StreetArrestWarrant", CalloutProbability.Always)]
 #else
@@ -56,6 +57,9 @@ namespace FederalCallouts.Callouts
             ShowCalloutAreaBlipBeforeAccepting(SpawnPoint, 15f);
             AddMinimumDistanceCheck(5f, SpawnPoint);
             suspect = new Ped(SpawnPoint);
+            Persona p = Functions.GetPersonaForPed(suspect);
+            Persona wanted = new Persona(suspect, p.Gender, p.BirthDay, p.Citations, p.Forename, p.Surname, p.LicenseState, p.TimesStopped, true, false, false);
+            Functions.SetPersonaForPed(suspect, wanted);
             if (!suspect.Exists())
                 return false;
             suspect.Tasks.Wander();
