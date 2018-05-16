@@ -25,3 +25,17 @@ C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\bin\Release\VocalD
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.csprojResolveAssemblyReference.cache
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.dll
 C:\Users\sevru\Dropbox\#C#Projects\FederalCallouts\APIExample\obj\Release\FederalCallouts.pdb
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\FederalCallouts.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\FederalCallouts.pdb
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\LSPD First Response.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\RAGENativeUI.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\RagePluginHookSDK.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\VocalDispatch.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\LSPD First Response.pdb
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\RAGENativeUI.xml
+Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\RagePluginHookSDK.xml
+Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Release\FederalCallouts.csproj.CoreCompileInputs.cache
+Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Release\FederalCallouts.csproj.CopyComplete
+Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Release\FederalCallouts.dll
+Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Release\FederalCallouts.pdb
+Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Release\FederalCallouts.csprojAssemblyReference.cache

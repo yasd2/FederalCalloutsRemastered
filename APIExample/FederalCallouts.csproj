@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="LSPD First Response">
       <HintPath>..\..\..\LSPDFR 031 Manual Install\plugins\LSPD First Response.dll</HintPath>
@@ -88,8 +91,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release"  "C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.Console.exe" -file "Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\FederalCallouts.dll" -targetfile "&lt;AssemblyLocation&gt;\&lt;AssemblyFileName&gt;" -antitamp 1 -control_flow_obfuscation 1 -flow_level 9 -resourceencryption 1 -antistrong 1 -necrobit 1</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

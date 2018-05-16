@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Federal Callouts")]
-[assembly: AssemblyDescription("Callout plugin for LSPDFR 0.3, compiled with RPH 0.34. Verified working with 0.36")]
+[assembly: AssemblyDescription("Callout plugin for LSPDFR 0.3.1, compiled with RPH 0.62. Verified working with 0.62")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Goigle / Code 3 Gaming")]
 [assembly: AssemblyProduct("Federal Callouts")]
-[assembly: AssemblyCopyright("Copyright © Goigle 2015")]
+[assembly: AssemblyCopyright("Copyright © Goigle 2015-2017")]
 [assembly: AssemblyTrademark("")] 
 [assembly: AssemblyCulture("")]
 
@@ -30,4 +30,4 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("0.560.*")]
+[assembly: AssemblyVersion("0.561.*")]
