@@ -26,4 +26,5 @@ Kidnapping:
 Dispatch has a list of suspect vehicles and is getting reports of more. Pull over each vehicle and look in the back to find the victim.
 
 Bomb Sting:
-Watch the van, take the suspect down when he uses his phone. His bomb is fake.
+Watch the van, take the suspect down when he uses his phone. His bomb is fake
+And Sometimes the bomb isn't fake but real and will blow up! be careful and mindful of that!
