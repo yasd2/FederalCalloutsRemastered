@@ -31,16 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LSPD First Response, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\LSPD First Response.dll</HintPath>
+    <Reference Include="LSPD First Response">
+      <HintPath>..\..\..\LSPDFR 031 Manual Install\plugins\LSPD First Response.dll</HintPath>
     </Reference>
     <Reference Include="RAGENativeUI">
-      <HintPath>..\Dependencies\RAGENativeUI.dll</HintPath>
+      <HintPath>..\..\..\RAGENativeUI\RAGENativeUI.dll</HintPath>
     </Reference>
-    <Reference Include="RagePluginHookSDK, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dependencies\RagePluginHookSDK.dll</HintPath>
+    <Reference Include="RagePluginHookSDK">
+      <HintPath>..\..\..\RAGEPluginHook_0_62_1216_14731_ALPHA\SDK\RagePluginHookSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,7 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="VocalDispatch">
-      <HintPath>..\Dependencies\VocalDispatch.dll</HintPath>
+      <HintPath>..\..\..\VocalDispatch\plugins\lspdfr\VocalDispatch.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +88,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "D:\Steam\SteamApps\common\Grand Theft Auto V\Plugins\LSPDFR"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

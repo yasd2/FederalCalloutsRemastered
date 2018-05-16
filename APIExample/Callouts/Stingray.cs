@@ -137,7 +137,10 @@ namespace FederalCallouts.Callouts
                 }
                 else
                 {
-                    throw new System.Exception("Not implemented!");
+                    //No Implemented, Terminating Callout, would be best instead of crashing the script and lspdfr and also leaving the player in this sitution.
+                    Game.LogTrivial("[Federal Callouts][Stingray Callout] Function Not Implemented! Ending Callout");
+                    End();
+                    //throw new System.Exception("Not implemented!");
                 }
                 //TODO: Make suspect do something base on being armed or not.
                 state = StingrayCalloutState.Action;

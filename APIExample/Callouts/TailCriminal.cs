@@ -19,7 +19,7 @@ namespace FederalCallouts.Callouts
 #if DEBUG
     [CalloutInfo("TailCriminal", CalloutProbability.Always)]
 #else
-    [CalloutInfo("TailCriminal", CalloutProbability.Low)]
+    [CalloutInfo("TailCriminal", CalloutProbability.Never)]
 #endif
     public class TailCriminal : Callout
     {
