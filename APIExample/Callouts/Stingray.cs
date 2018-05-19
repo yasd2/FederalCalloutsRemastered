@@ -137,7 +137,7 @@ namespace FederalCallouts.Callouts
                 }
                 else
                 {
-                    //No Implemented, Terminating Callout, would be best instead of crashing the script and lspdfr and also leaving the player in this sitution.
+                    //Not Implemented, Terminating Callout, would be best instead of crashing the script and lspdfr and also leaving the player in this sitution.
                     Game.LogTrivial("[Federal Callouts][Stingray Callout] Function Not Implemented! Ending Callout");
                     End();
                     //throw new System.Exception("Not implemented!");
