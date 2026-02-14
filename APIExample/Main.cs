@@ -78,6 +78,7 @@ namespace FederalCallouts
         public override void Initialize()
         {
             Game.LogTrivial(string.Format("[FC] Initializing Federal Callouts {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+            Game.LogTrivial("remastered by Yasd");
             //Event handler for detecting if the player goes on duty
             Functions.OnOnDutyStateChanged += Functions_OnOnDutyStateChanged;
             InitializationFile ini = new InitializationFile("Plugins/LSPDFR/FederalCallouts.ini");
@@ -104,15 +105,15 @@ namespace FederalCallouts
             Settings.EnableKidnapping = ini.ReadBoolean("Kidnapping", "Enable", true);
             Settings.Prob_Kidn = ini.ReadInt32("Kidnapping", "Probability", 2);
 
-            //Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
-            Settings.EnableBombSting = false;
+            Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
+            //Settings.EnableBombSting = false;
             Settings.Prob_BS = ini.ReadInt32("BombSting", "Probability", 2);
 
             //Settings.EnableORC = ini.ReadBoolean("OrganizedRetailCrime", "Enable", true);
             Settings.EnableORC = false;
 
             Settings.EnableStingray = ini.ReadBoolean("Stingray", "Enable", true);
-            Settings.EnableStingray = false;
+            //Settings.EnableStingray = false;
             Settings.Prob_Stingray = ini.ReadInt32("Stingray", "Probability", 2);
             Game.LogTrivial("[FC] Loading spawn positions");
 
@@ -292,9 +293,11 @@ namespace FederalCallouts
                     for (int i = 0; i <= Settings.Prob_BS; i++)
                         Functions.RegisterCallout(typeof(BombSting));
 
+                Settings.EnableStingray = false;
                 if (Settings.EnableStingray)
                     for (int i = 0; i <= Settings.Prob_Stingray; i++)
                         Functions.RegisterCallout(typeof(Stingray));
+
                 if (Settings.EnableRepairModule)
                     StartRepairModule();
                 InitializationFile ini = new InitializationFile("Plugins/LSPDFR/FederalCallouts.ini");

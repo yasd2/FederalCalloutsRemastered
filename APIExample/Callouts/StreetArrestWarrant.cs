@@ -60,9 +60,9 @@ namespace FederalCallouts.Callouts
             //prevent lspdfr crashes due to non existant ped
             if (suspect.Exists() == true)
             {
-                Persona p = Functions.GetPersonaForPed(suspect);
+                /*Persona p = Functions.GetPersonaForPed(suspect);
                 Persona wanted = new Persona(suspect, p.Gender, p.BirthDay, p.Citations, p.Forename, p.Surname, p.LicenseState, p.TimesStopped, true, false, false);
-                Functions.SetPersonaForPed(suspect, wanted);
+                Functions.SetPersonaForPed(suspect, wanted);*/
             } else
             {
                 return false;

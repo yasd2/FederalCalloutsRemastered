@@ -43,7 +43,7 @@ namespace FederalCallouts.Callouts
             currentVehicle = new Vehicle("burrito3", SpawnPoint);
             suspect.WarpIntoVehicle(currentVehicle, -1);
             suspect.Tasks.CruiseWithVehicle(currentVehicle, 13.0f, VehicleDrivingFlags.RespectIntersections | VehicleDrivingFlags.FollowTraffic | VehicleDrivingFlags.AvoidHighways);
-            if (new Random().Next(0, 101) < Settings.KidnappingMinimumPercent)
+            if (MathHelper.GetRandomInteger(0, 101) < Settings.KidnappingMinimumPercent)
             {
                 Game.LogTrivialDebug("[FC] This suspect is guilty");
                 currentSuspectGuilty = true;
@@ -124,7 +124,7 @@ namespace FederalCallouts.Callouts
                     suspect.WarpIntoVehicle(currentVehicle, -1);
                     suspectBlip = suspect.AttachBlip();
                     suspect.Tasks.CruiseWithVehicle(currentVehicle, 13.0f, VehicleDrivingFlags.RespectIntersections | VehicleDrivingFlags.FollowTraffic | VehicleDrivingFlags.AvoidHighways);
-                    if (new Random().Next(0, 101) < Settings.KidnappingMinimumPercent)
+                    if (MathHelper.GetRandomInteger(0, 101) < Settings.KidnappingMinimumPercent)
                     {
                         Game.LogTrivialDebug("[FC] This suspect is guilty");
                         currentSuspectGuilty = true;

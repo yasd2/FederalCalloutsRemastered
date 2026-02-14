@@ -18,7 +18,7 @@ namespace FederalCallouts.Callouts
 
     public class Stingray : Callout
     {
-
+        static Ped Player => Game.LocalPlayer.Character;
         private Ped suspect;
         private Vehicle helo;
         private Blip suspectBlip;
@@ -70,10 +70,12 @@ namespace FederalCallouts.Callouts
                 GameFiber.StartNew((() =>
                 {
                     helo.IsGravityDisabled = true;
-                    charManager.SwitchToPed(pilot);
+                    //charManager.SwitchToPed(pilot);
+                    Game.LocalPlayer.Character.WarpIntoVehicle(helo, helo.GetFreeSeatIndex() ?? -1);
+                    if (pilot) pilot.Delete();
                     GameFiber.Sleep(3000);
                     helo.Rotation = new Rotator(0, 0, 0);
-                    Game.LocalPlayer.Character.WarpIntoVehicle(helo, helo.GetFreeSeatIndex() ?? -1);
+                    
                     helo.DriveForce = 1000000f;
                     GameFiber.Sleep(1000);
                     helo.Rotation = new Rotator(0, 0, 0);
@@ -117,16 +119,28 @@ namespace FederalCallouts.Callouts
             if (state == StingrayCalloutState.Scanned)
             {
                 SpawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(200f));
-                suspect = new Ped(SpawnPoint);
+                suspect = new Ped(Model.PedModels[MathHelper.GetRandomInteger(Model.PedModels.Length)], SpawnPoint, MathHelper.GetRandomInteger(360))
+                {
+                    IsPersistent = true,
+                    BlockPermanentEvents = true,
+                };
+                //Game.DisplayNotification("suspect exists: " + suspect.Exists());
                 bool armed;
                 Realism.GetArrestReason(out armed);
-                suspectBlip = suspect.AttachBlip();
-                suspectBlip.EnableRoute(Color.Yellow);
+                suspectBlip = new Blip(suspect);
+                suspectBlip.IsRouteEnabled = true;
                 suspectBlip.Scale = 0.75f;
+                //Game.LogTrivial("suspectBlip exists: " + suspectBlip.Exists());
                 Dispatch.Notify("~g~Ground teams~w~: You have a green light to move in.");
                 if (switchedCharacter)
                 {
-                    charManager.SwitchToBackup();
+                    //charManager.SwitchToBackup();
+                    if (Player)
+                        if (Player.LastVehicle)
+                            Player.WarpIntoVehicle(Player.LastVehicle, -1);
+                        else
+                            Player.WarpIntoVehicle(new Vehicle("police", World.GetNextPositionOnStreet(Player.Position)), -1);
+
                     GameFiber.StartNew((() =>
                     {
                         GameFiber.Sleep(2100);
@@ -147,7 +161,7 @@ namespace FederalCallouts.Callouts
             }
             if (state == StingrayCalloutState.Action)
             {
-                End();
+                //End();
             }
             base.Process();
         }
@@ -158,7 +172,7 @@ namespace FederalCallouts.Callouts
             if (suspect.Exists())
                 suspect.IsPersistent = false;
             pool.Remove(stingBar);
-            charManager.SwitchToBackup();
+            //charManager.SwitchToBackup();
             base.End();
 
         }

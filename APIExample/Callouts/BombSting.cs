@@ -148,10 +148,27 @@ namespace FederalCallouts.Callouts
                     //TASK_USE_MOBILE_PHONE_TIMED(Ped ped, int duration)
                     Rage.Native.NativeFunction.CallByName<uint>("TASK_USE_MOBILE_PHONE_TIMED", bomber, 15 * 1000);
                     GameFiber.Wait(3000);
-                    if (new Random().Next(0, 100) < 10)
+                    if (MathHelper.GetRandomInteger(0, 100) < 40)
                     {
                         bombVan.Explode(true);
                         Game.DisplaySubtitle("The ~r~suspect~w~ must have gotten a real bomb!", 15 * 1000);
+                    }
+                    else
+                    {
+                        switch (MathHelper.GetRandomInteger(2))
+                        {
+                            case 0: 
+                                Game.DisplaySubtitle("It appears that the bomb is fake.", 8000);
+                                break;
+
+                            case 1:
+                                Game.DisplaySubtitle("The bomb didn't explode.", 8000);
+                                break;
+
+                            case 2:
+                                Game.DisplaySubtitle("Detain the suspect and check the van for explosives.", 8000);
+                                break;
+                        }
                     }
                 }
             }));

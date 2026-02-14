@@ -73,7 +73,7 @@ namespace FederalCallouts.Callouts
         public override bool OnCalloutAccepted()
         {
             sw.Start();
-            msToStart = new Random().Next(Settings.AssassinMinStrikeTime, Settings.AssassinMaxStrikeTime);
+            msToStart = MathHelper.GetRandomInteger(Settings.AssassinMinStrikeTime, Settings.AssassinMaxStrikeTime);
             Game.LogTrivialDebug(string.Format("[FC] The assassin will strike after {0} seconds", msToStart));
             //converting the randomly generated seconds to milliseconds
             msToStart *= 1000;

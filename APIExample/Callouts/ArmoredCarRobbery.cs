@@ -67,6 +67,12 @@ namespace FederalCallouts.Callouts
                 attacker2.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_PUMPSHOTGUN"), 500, true);
                 attacker3.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_SMG"), 500, true);
                 attacker4.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_ASSAULTRIFLE"), 500, true);
+
+                attacker1.FiringPattern = FiringPattern.BurstFire;
+                attacker2.FiringPattern = FiringPattern.BurstFire;
+                attacker3.FiringPattern = FiringPattern.BurstFire;
+                attacker4.FiringPattern = FiringPattern.BurstFire;
+
                 attacker1.WarpIntoVehicle(robberyVan, (int)robberyVan.GetFreeSeatIndex());
                 attacker2.WarpIntoVehicle(robberyVan, (int)robberyVan.GetFreeSeatIndex());
                 attacker3.WarpIntoVehicle(robberyVan, (int)robberyVan.GetFreeSeatIndex());
@@ -83,16 +89,23 @@ namespace FederalCallouts.Callouts
             guard2.CanAttackFriendlies = false;
             guard1.Armor = 100;
             guard2.Armor = 100;
-            RelationshipGroup g = new RelationshipGroup("SECURITY");
+            RelationshipGroup g = RelationshipGroup.SecurityGuard;
             Game.LogTrivialDebug(g.Name);
-            guard1.RelationshipGroup = "SECURITY";
+            guard1.RelationshipGroup = g;
             guard2.RelationshipGroup = g;
+
             Game.SetRelationshipBetweenRelationshipGroups(g, "COP", Relationship.Companion);
-            Game.SetRelationshipBetweenRelationshipGroups("COP", g, Relationship.Like);
+            Game.SetRelationshipBetweenRelationshipGroups("COP", g, Relationship.Companion);
+
             Game.SetRelationshipBetweenRelationshipGroups(g, Game.LocalPlayer.Character.RelationshipGroup, Relationship.Companion);
-            Game.SetRelationshipBetweenRelationshipGroups(Game.LocalPlayer.Character.RelationshipGroup, g, Relationship.Like);
-            Game.SetRelationshipBetweenRelationshipGroups("ROBBERS", g, Relationship.Hate);
-            Game.SetRelationshipBetweenRelationshipGroups(g, r, Relationship.Dislike);
+            Game.SetRelationshipBetweenRelationshipGroups(Game.LocalPlayer.Character.RelationshipGroup, g, Relationship.Companion);
+
+            Game.SetRelationshipBetweenRelationshipGroups("COP", Game.LocalPlayer.Character.RelationshipGroup, Relationship.Companion);
+            Game.SetRelationshipBetweenRelationshipGroups(Game.LocalPlayer.Character.RelationshipGroup, "COP", Relationship.Companion);
+
+            Game.SetRelationshipBetweenRelationshipGroups(r, g, Relationship.Hate);
+            Game.SetRelationshipBetweenRelationshipGroups(g, r, Relationship.Hate);
+
             guard1.Inventory.GiveNewWeapon("WEAPON_COMBATPISTOL", 250, true);
             guard2.Inventory.GiveNewWeapon("WEAPON_COMBATPISTOL", 250, false);
             guard2.Inventory.GiveNewWeapon("WEAPON_SMG", 500, true);
@@ -341,11 +354,11 @@ namespace FederalCallouts.Callouts
                 }
                 if (Game.IsKeyDown(Settings.StartKey))
                 {
-                    if (!swatVehicle.Driver.Exists())
+                    /*if (!swatVehicle.Driver.Exists())
                     {
                         Game.DisplayNotification("SWAT driver was cleaned up by GTA, could not switch.");
                     }
-                    else
+                    else*/
                     {
                         playerSwitchedChars = true;
                         GameFiber.StartNew((() =>
@@ -353,7 +366,10 @@ namespace FederalCallouts.Callouts
                             if (swatVehicle.PassengerCount > 0)
                                 foreach (Ped p in swatVehicle.Passengers)
                                     p.Delete();
-                            charMan.SwitchToPed(swatVehicle.Driver);
+                            //charMan.SwitchToPed(swatVehicle.Driver);
+                            if (swatVehicle.Driver) swatVehicle.Driver.Delete();
+                            Game.LocalPlayer.Character.WarpIntoVehicle(swatVehicle, -1);
+                            Game.DisplayNotification($"~b~player is teleported in swatvehicle, does veh exist: {swatVehicle.Exists()}");
                             GameFiber.Sleep(4000);
                             Game.LogTrivial("[FC] Recreating vehicle crew");
                             for (int i = 0; i < 3; i++)
@@ -436,8 +452,8 @@ namespace FederalCallouts.Callouts
             if (attacker2) { attacker2.Dismiss(); }
             if (attacker3) { attacker3.Dismiss(); }
             if (attacker4) { attacker4.Dismiss(); }
-            if (playerSwitchedChars)
-                charMan.SwitchToBackup();
+            if (playerSwitchedChars) { }
+                //charMan.SwitchToBackup();
             base.End();
         }
     }

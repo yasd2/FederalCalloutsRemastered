@@ -39,3 +39,30 @@ Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.C
 Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.CopyComplete
 Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Debug\FederalCallouts.dll
 Z:\BitBucket REPOS\federalcallouts\APIExample\obj\Debug\FederalCallouts.pdb
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\FederalCallouts.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\FederalCallouts.pdb
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\RAGENativeUI.xml
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.AssemblyReference.cache
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\obj\Debug\FederalC.CC660AEA.Up2Date
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\obj\Debug\FederalCallouts.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\obj\Debug\FederalCallouts.pdb
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\LSPD First Response.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\RAGENativeUI.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\RagePluginHook.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\RagePluginHook.xml
+C:\Users\Chris\Source\Repos\federalcallouts\APIExample\bin\Debug\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\FederalCallouts.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\FederalCallouts.pdb
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\RAGENativeUI.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\RagePluginHook.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\RAGENativeUI.xml
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\RagePluginHook.xml
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\bin\Debug\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.AssemblyReference.cache
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\obj\Debug\FederalCallouts.csproj.CoreCompileInputs.cache
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\obj\Debug\FederalC.CC660AEA.Up2Date
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\obj\Debug\FederalCallouts.dll
+C:\Users\Chris\source\repos\Open Source\federalcallouts\APIExample\obj\Debug\FederalCallouts.pdb

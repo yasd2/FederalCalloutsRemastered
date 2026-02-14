@@ -9,7 +9,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FederalCallouts</RootNamespace>
     <AssemblyName>FederalCallouts</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,14 +36,15 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LSPD First Response">
-      <HintPath>..\..\..\LSPDFR 031 Manual Install\plugins\LSPD First Response.dll</HintPath>
+    <Reference Include="LSPD First Response, Version=0.3.38.5436, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\yasd2\MCCallouts-Ko-fi\References\LSPD First Response.dll</HintPath>
     </Reference>
-    <Reference Include="RAGENativeUI">
-      <HintPath>..\..\..\RAGENativeUI\RAGENativeUI.dll</HintPath>
+    <Reference Include="RAGENativeUI, Version=1.9.3.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\RAGENativeUI.1.9.3\lib\net472\RAGENativeUI.dll</HintPath>
     </Reference>
-    <Reference Include="RagePluginHookSDK">
-      <HintPath>..\..\..\RAGEPluginHook_0_62_1216_14731_ALPHA\SDK\RagePluginHookSDK.dll</HintPath>
+    <Reference Include="RagePluginHook, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\RagePluginHook.1.124.0\lib\net472\RagePluginHook.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,9 +55,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="VocalDispatch">
-      <HintPath>..\..\..\VocalDispatch\plugins\lspdfr\VocalDispatch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Callouts\GangShakedown.cs" />
@@ -88,10 +88,12 @@
     <Compile Include="Callouts\StreetArrestWarrant.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if /I "$(ConfigurationName)" == "Release"  "C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.Console.exe" -file "Z:\BitBucket REPOS\federalcallouts\APIExample\bin\Release\FederalCallouts.dll" -targetfile "&lt;AssemblyLocation&gt;\&lt;AssemblyFileName&gt;" -antitamp 1 -antistrong 1 -necrobit 1</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "C:\Program Files\Rockstar Games\Grand Theft Auto V Legacy\Plugins\LSPDFR
+copy /Y "$(TargetDir)$(ProjectName).pdb" "C:\Program Files\Rockstar Games\Grand Theft Auto V Legacy\Plugins\LSPDFR</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
