@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Federal Callouts")]
-[assembly: AssemblyDescription("Callout plugin for LSPDFR 0.3.1, compiled with RPH 0.62. Verified working with 0.62")]
+[assembly: AssemblyDescription("Callout plugin for LSPDFR 0.4.9, compiled with RPH 1.124. Verified working with 1.130")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Goigle / Code 3 Gaming")]
 [assembly: AssemblyProduct("Federal Callouts")]

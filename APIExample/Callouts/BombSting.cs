@@ -11,9 +11,9 @@ using static FederalCallouts.Extensions;
 namespace FederalCallouts.Callouts
 {
 #if DEBUG
-    [CalloutInfo("BombSting", CalloutProbability.Always)]
+    [CalloutInfo("BombSting", CalloutProbability.Medium)]
 #else
-    [CalloutInfo("BombSting", (CalloutProbability)3)]
+    [CalloutInfo("BombSting", CalloutProbability.Medium)]
 #endif
     public class BombSting : Callout
     {

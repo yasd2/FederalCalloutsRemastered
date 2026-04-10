@@ -11,9 +11,9 @@ using System.Drawing;
 namespace FederalCallouts.Callouts
 {
 #if DEBUG
-    [CalloutInfo("Stingray", CalloutProbability.Always)]
+    [CalloutInfo("Stingray", CalloutProbability.Medium)]
 #else
-    [CalloutInfo("Stingray", CalloutProbability.High)]
+    [CalloutInfo("Stingray", CalloutProbability.Medium)]
 #endif
 
     public class Stingray : Callout

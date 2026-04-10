@@ -17,7 +17,7 @@ namespace FederalCallouts.Callouts
      * 
      */
 #if DEBUG
-    [CalloutInfo("ArmoredCarRobbery", CalloutProbability.Always)]
+    [CalloutInfo("ArmoredCarRobbery", CalloutProbability.Medium)]
 #else
     [CalloutInfo("ArmoredCarRobbery", CalloutProbability.Medium)]
 #endif

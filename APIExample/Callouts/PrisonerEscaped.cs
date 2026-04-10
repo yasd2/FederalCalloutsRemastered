@@ -13,7 +13,7 @@ using FederalCallouts.UI;
 namespace FederalCallouts.Callouts
 {
 #if DEBUG
-    [CalloutInfo("PrisonerEscaped", CalloutProbability.Always)]
+    [CalloutInfo("PrisonerEscaped", CalloutProbability.Medium)]
 #else
     [CalloutInfo("PrisonerEscaped", CalloutProbability.High)]
 #endif

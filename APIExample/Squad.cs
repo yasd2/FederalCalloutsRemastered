@@ -6,10 +6,7 @@ namespace FederalCallouts
     public class Squad
     {
         Vehicle veh;
-        Ped m1;
-        Ped m2;
-        Ped m3;
-        Ped m4;
+        Ped m1, m2, m3, m4;
         Ped[] squad;
         /// <summary>
         /// Spawns a new squad in the specified car (must have 4 spaces)

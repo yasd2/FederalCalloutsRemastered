@@ -9,7 +9,7 @@ namespace FederalCallouts.Callouts
 {
     //Give your callout a string name and a probability of spawning. We also inherit from the Callout class, as this is a callout
     [CalloutInfo("ExampleCallout", CalloutProbability.Medium)]
-    public class ExampleCallout : Callout
+    public abstract class ExampleCallout : Callout
     {
 
         private Vector3 SpawnPoint;

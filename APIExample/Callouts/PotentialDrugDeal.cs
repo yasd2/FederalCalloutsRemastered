@@ -21,9 +21,9 @@ namespace FederalCallouts.Callouts
     //Give your callout a string name and a probability of spawning. We also inherit from the Callout class, as this is a callout
     //[CalloutInfo("PotentialDrugDeal", CalloutProbability.Medium)]
 #if DEBUG
-    [CalloutInfo("PotentialDrugDeal", CalloutProbability.Always)]
+    [CalloutInfo("PotentialDrugDeal", CalloutProbability.Medium)]
 #else
-    [CalloutInfo("PotentialDrugDeal", CalloutProbability.VeryHigh)]
+    [CalloutInfo("PotentialDrugDeal", CalloutProbability.Medium)]
 #endif
     public class PotentialDrugDeal : Callout
     {

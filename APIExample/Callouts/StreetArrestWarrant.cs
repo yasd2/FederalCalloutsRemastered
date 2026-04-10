@@ -13,9 +13,9 @@ namespace FederalCallouts.Callouts
 {
     //TODO: make peds wanted
 #if DEBUG
-    [CalloutInfo("StreetArrestWarrant", CalloutProbability.Always)]
+    [CalloutInfo("StreetArrestWarrant", CalloutProbability.Medium)]
 #else
-    [CalloutInfo("StreetArrestWarrant", CalloutProbability.VeryHigh)]
+    [CalloutInfo("StreetArrestWarrant", CalloutProbability.Medium)]
 #endif
     public class StreetArrestWarrant : Callout
     {

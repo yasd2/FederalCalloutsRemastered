@@ -12,7 +12,7 @@ using System.Drawing;
 namespace FederalCallouts.Callouts
 {
 #if DEBUG
-    [CalloutInfo("Assassination", CalloutProbability.Always)]
+    [CalloutInfo("Assassination", CalloutProbability.Medium)]
 #else
     [CalloutInfo("Assassination", CalloutProbability.Medium)]
 #endif

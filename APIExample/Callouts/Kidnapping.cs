@@ -8,7 +8,7 @@ using System.Threading;
 namespace FederalCallouts.Callouts
 {
 #if DEBUG
-    [CalloutInfo("Kidnapping", CalloutProbability.Always)]
+    [CalloutInfo("Kidnapping", CalloutProbability.Medium)]
 #else
     [CalloutInfo("Kidnapping", CalloutProbability.High)]
 #endif

@@ -25,14 +25,6 @@ namespace FederalCallouts
         public static bool EnableStingray;
         public static bool EnableORC;
         public static Keys StartKey;
-        public static int Prob_PDD;
-        public static int Prob_Ass;
-        public static int Prob_BS;
-        public static int Prob_PE;
-        public static int Prob_SAW;
-        public static int Prob_Kidn;
-        public static int Prob_ACR;
-        public static int Prob_Stingray;
         public static int AssassinMaxStrikeTime;
         public static int AssassinMinStrikeTime;
 

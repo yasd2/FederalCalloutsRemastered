@@ -77,8 +77,7 @@ namespace FederalCallouts
         /// </summary>
         public override void Initialize()
         {
-            Game.LogTrivial(string.Format("[FC] Initializing Federal Callouts {0}", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()));
-            Game.LogTrivial("remastered by Yasd");
+            Game.LogTrivial($"[FC] Initializing Federal Callouts {System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()}, remastered by Yasd");
             //Event handler for detecting if the player goes on duty
             Functions.OnOnDutyStateChanged += Functions_OnOnDutyStateChanged;
             InitializationFile ini = new InitializationFile("Plugins/LSPDFR/FederalCallouts.ini");
@@ -86,35 +85,25 @@ namespace FederalCallouts
             KeysConverter kc = new KeysConverter();
             Settings.StartKey = (Keys)kc.ConvertFromString(ini.ReadString("Main", "StartKey", "Y"));
             Settings.EnableRepairModule = ini.ReadBoolean("Main", "EnableRepairs", true);
+
             //Enabling or disabling callouts
             Settings.EnableArmoredCarRobbery = ini.ReadBoolean("ArmoredCarRobbery", "Enable", true);
-            Settings.Prob_ACR = ini.ReadInt32("ArmoredCarRobbery", "Probability", 2);
 
             Settings.EnablePotentialDrugDeal = ini.ReadBoolean("PotentialDrugDeal", "Enable", true);
-            Settings.Prob_PDD = ini.ReadInt32("PotentialDrugDeal", "Probability", 3);
 
             Settings.EnableExecuteArrestWarrant = ini.ReadBoolean("ExecuteArrestWarrant", "Enable", true);
-            Settings.Prob_SAW = ini.ReadInt32("ExecuteArrestWarrant", "Probability", 3);
 
             Settings.EnableAssassination = ini.ReadBoolean("Assassination", "Enable", true);
-            Settings.Prob_Ass = ini.ReadInt32("Assassination", "Probability", 2);
 
             Settings.EnablePrisonerEscaped = ini.ReadBoolean("PrisonerEscaped", "Enable", true);
-            Settings.Prob_PE = ini.ReadInt32("PrisonerEscaped", "Probability", 2);
 
             Settings.EnableKidnapping = ini.ReadBoolean("Kidnapping", "Enable", true);
-            Settings.Prob_Kidn = ini.ReadInt32("Kidnapping", "Probability", 2);
 
             Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
-            //Settings.EnableBombSting = false;
-            Settings.Prob_BS = ini.ReadInt32("BombSting", "Probability", 2);
-
-            //Settings.EnableORC = ini.ReadBoolean("OrganizedRetailCrime", "Enable", true);
-            Settings.EnableORC = false;
 
             Settings.EnableStingray = ini.ReadBoolean("Stingray", "Enable", true);
-            //Settings.EnableStingray = false;
-            Settings.Prob_Stingray = ini.ReadInt32("Stingray", "Probability", 2);
+
+
             Game.LogTrivial("[FC] Loading spawn positions");
 
             //Callout specific settings
@@ -241,16 +230,18 @@ namespace FederalCallouts
                             GameFiber.Wait(1000);
                             Game.FadeScreenOut(1000, true);
                             Vehicle v = Game.LocalPlayer.Character.CurrentVehicle;
-                            v.LockStatus = VehicleLockStatus.Locked;
-                            v.Repair();
-                            v.Wash();
-                            v.Position = Repair.Locations[repairLoc].Position;
-                            v.Heading = Repair.Locations[repairLoc].Heading;
-                            GameFiber.Sleep(3 * 1000);
-                            Game.FadeScreenIn(1000, true);
-                            Game.LocalPlayer.Character.CurrentVehicle.LockStatus = VehicleLockStatus.Unlocked;
-                            Game.DisplaySubtitle("All done! ~r~(You will be unable to repair again for 1 minute)", 10 * 1000);
-
+                            if (v)
+                            {
+                                v.LockStatus = VehicleLockStatus.Locked;
+                                v.Repair();
+                                v.Wash();
+                                v.Position = Repair.Locations[repairLoc].Position;
+                                v.Heading = Repair.Locations[repairLoc].Heading;
+                                GameFiber.Sleep(3 * 1000);
+                                Game.FadeScreenIn(1000, true);
+                                Game.LocalPlayer.Character.CurrentVehicle.LockStatus = VehicleLockStatus.Unlocked;
+                                Game.DisplaySubtitle("All done! ~r~(You will be unable to repair again for 1 minute)", 10 * 1000);
+                            }
                         }));
                         doRepair = false;
                     }
@@ -266,37 +257,37 @@ namespace FederalCallouts
             if (onDuty)
             {
                 if (Settings.EnablePotentialDrugDeal)
-                    for(int i = 0; i <= Settings.Prob_PDD;i++)
+                    //for(int i = 0; i <= Settings.Prob_PDD;i++)
                     Functions.RegisterCallout(typeof(PotentialDrugDeal));
 
                 if (Settings.EnableAssassination)
-                    for (int i = 0; i <= Settings.Prob_Ass; i++)
-                        Functions.RegisterCallout(typeof(Assassination))
-                            ;
+                    //for (int i = 0; i <= Settings.Prob_Ass; i++)
+                    Functions.RegisterCallout(typeof(Assassination));
+
                 if (Settings.EnableExecuteArrestWarrant)
-                    for (int i = 0; i <= Settings.Prob_SAW; i++)
-                        Functions.RegisterCallout(typeof(StreetArrestWarrant));
+                    //for (int i = 0; i <= Settings.Prob_SAW; i++)
+                    Functions.RegisterCallout(typeof(StreetArrestWarrant));
 
                 if (Settings.EnableArmoredCarRobbery)
-                    for (int i = 0; i <= Settings.Prob_ACR; i++)
-                        Functions.RegisterCallout(typeof(ArmoredCarRobbery));
+                    //for (int i = 0; i <= Settings.Prob_ACR; i++)
+                    Functions.RegisterCallout(typeof(ArmoredCarRobbery));
 
                 if (Settings.EnablePrisonerEscaped)
-                    for (int i = 0; i <= Settings.Prob_PE; i++)
-                        Functions.RegisterCallout(typeof(PrisonerEscaped));
+                    //for (int i = 0; i <= Settings.Prob_PE; i++)
+                    Functions.RegisterCallout(typeof(PrisonerEscaped));
 
                 if (Settings.EnableKidnapping)
-                    for (int i = 0; i <= Settings.Prob_Kidn; i++)
-                        Functions.RegisterCallout(typeof(Kidnapping));
+                    //for (int i = 0; i <= Settings.Prob_Kidn; i++)
+                    Functions.RegisterCallout(typeof(Kidnapping));
 
                 if (Settings.EnableBombSting)
-                    for (int i = 0; i <= Settings.Prob_BS; i++)
-                        Functions.RegisterCallout(typeof(BombSting));
+                    //for (int i = 0; i <= Settings.Prob_BS; i++)
+                    Functions.RegisterCallout(typeof(BombSting));
 
                 Settings.EnableStingray = false;
                 if (Settings.EnableStingray)
-                    for (int i = 0; i <= Settings.Prob_Stingray; i++)
-                        Functions.RegisterCallout(typeof(Stingray));
+                    //for (int i = 0; i <= Settings.Prob_Stingray; i++)
+                    Functions.RegisterCallout(typeof(Stingray));
 
                 if (Settings.EnableRepairModule)
                     StartRepairModule();

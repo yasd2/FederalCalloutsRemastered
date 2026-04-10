@@ -57,12 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Callouts\GangShakedown.cs" />
     <Compile Include="Callouts\Kidnapping.cs" />
-    <Compile Include="Callouts\OrganizedRetailCrime.cs" />
     <Compile Include="Callouts\PrisonerEscaped.cs" />
     <Compile Include="Callouts\Stingray.cs" />
-    <Compile Include="Callouts\TailCriminal.cs" />
     <Compile Include="Dispatch.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Realism.cs" />
@@ -70,17 +67,12 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Squad.cs" />
     <Compile Include="Tools\CharacterManager.cs" />
-    <Compile Include="Tools\ConfigEUP.cs" />
     <Compile Include="Tools\ExtendedSpawnPoint.cs" />
-    <Compile Include="Tools\FederalBackup.cs" />
     <Compile Include="Tools\PreviewVehicle.cs" />
-    <Compile Include="UI\FedMenu.cs" />
     <Compile Include="UI\PedAwarenessIndicator.cs" />
-    <Compile Include="Tools\Persistence.cs" />
     <Compile Include="Tools\Serialization.cs" />
-    <Compile Include="UI\BackupMenu.cs" />
     <Compile Include="Vector3Extension.cs" />
-    <None Include="Callouts\ExampleCallout.cs" />
+    <None Include="Callouts\Other\ExampleCallout.cs" />
     <Compile Include="Callouts\ArmoredCarRobbery.cs" />
     <Compile Include="Callouts\Assassination.cs" />
     <Compile Include="Callouts\BombSting.cs" />
