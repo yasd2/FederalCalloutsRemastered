@@ -15,6 +15,7 @@ namespace FederalCallouts
         /// </summary>
         public static string PlayerName;
         public static bool EnableRepairModule;
+
         public static bool EnableArmoredCarRobbery;
         public static bool EnablePotentialDrugDeal;
         public static bool EnableExecuteArrestWarrant;
@@ -22,8 +23,7 @@ namespace FederalCallouts
         public static bool EnablePrisonerEscaped;
         public static bool EnableKidnapping;
         public static bool EnableBombSting;
-        public static bool EnableStingray;
-        public static bool EnableORC;
+
         public static Keys StartKey;
         public static int AssassinMaxStrikeTime;
         public static int AssassinMinStrikeTime;

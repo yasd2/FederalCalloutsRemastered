@@ -101,9 +101,6 @@ namespace FederalCallouts
 
             Settings.EnableBombSting = ini.ReadBoolean("BombSting", "Enable", true);
 
-            Settings.EnableStingray = ini.ReadBoolean("Stingray", "Enable", true);
-
-
             Game.LogTrivial("[FC] Loading spawn positions");
 
             //Callout specific settings
@@ -283,11 +280,6 @@ namespace FederalCallouts
                 if (Settings.EnableBombSting)
                     //for (int i = 0; i <= Settings.Prob_BS; i++)
                     Functions.RegisterCallout(typeof(BombSting));
-
-                Settings.EnableStingray = false;
-                if (Settings.EnableStingray)
-                    //for (int i = 0; i <= Settings.Prob_Stingray; i++)
-                    Functions.RegisterCallout(typeof(Stingray));
 
                 if (Settings.EnableRepairModule)
                     StartRepairModule();
