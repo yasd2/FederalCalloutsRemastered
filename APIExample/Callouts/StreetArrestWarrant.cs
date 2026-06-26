@@ -58,17 +58,13 @@ namespace FederalCallouts.Callouts
             AddMinimumDistanceCheck(5f, SpawnPoint);
             suspect = new Ped(SpawnPoint);
             //prevent lspdfr crashes due to non existant ped
-            if (suspect.Exists() == true)
-            {
-                /*Persona p = Functions.GetPersonaForPed(suspect);
-                Persona wanted = new Persona(suspect, p.Gender, p.BirthDay, p.Citations, p.Forename, p.Surname, p.LicenseState, p.TimesStopped, true, false, false);
-                Functions.SetPersonaForPed(suspect, wanted);*/
-            } else
-            {
-                return false;
-            }
             if (!suspect.Exists())
                 return false;
+
+            Persona p = Functions.GetPersonaForPed(suspect);
+            p.Wanted = true;
+            Functions.SetPersonaForPed(suspect, p);
+            
             suspect.Tasks.Wander();
             Functions.PlayScannerAudioUsingPosition("WE_HAVE CRIME_WANTED_FELON IN_OR_ON_POSITION SUSPECT_IS ON_FOOT", suspect.Position);
             CalloutMessage = "Wanted person";

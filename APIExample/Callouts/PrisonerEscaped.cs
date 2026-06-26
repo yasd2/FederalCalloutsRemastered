@@ -68,6 +68,9 @@ namespace FederalCallouts.Callouts
             fugitive = new Ped("s_m_y_prisoner_01", SpawnPoint, 0);
             if (!fugitive.Exists())
                 return false;
+            Persona p = Functions.GetPersonaForPed(fugitive);
+            p.Wanted = true;
+            Functions.SetPersonaForPed(fugitive, p);
             fugitiveDescription = "an orange jumpsuit";
             fugitive.Tasks.Wander();
             Functions.PlayScannerAudioUsingPosition("WE_HAVE CRIME_WANTED_FELON IN_OR_ON_POSITION SUSPECT_IS ON_FOOT", fugitive.Position);
